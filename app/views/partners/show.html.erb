@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @partner.partner_type %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @partner.contact_number %>
+</p>
+
+<p>
+  <b>Information:</b>
+  <%= @partner.information %>
+</p>
+
+<p>
+  <b>Contact address:</b>
+  <%= @partner.contact_address %>
+</p>
+
+<!-- <p>
+  <b>Image:</b>
+  <%#= image_tag @partner.image_url %>
+</p>
+ -->
+<p>
+  <b>Menu:</b>
+  <%= image_tag @partner.menu_url %>
+</p>
+
+<%if current_user && current_user.admin %>
+  <%= link_to 'Edit', edit_partner_path(@partner) %> |
+  <%= button_to "Delete Me", @partner, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%end%>
+<%= link_to 'Back', partners_path %>

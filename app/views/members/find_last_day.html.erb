@@ -1,0 +1,27 @@
+<h1>Members whose membership is expiring today</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Membership type</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% for members_list in @members_list%>
+  <tr>members_list
+    <td><%= members_list.first_name %></td>
+    <td><%= members_list.last_name %></td>
+    <td><%= members_list.email %></td>
+    <td><%= members_list.membership_type %></td>
+    <td><%= members_list.start_date %></td>
+    <td><%= members_list.end_date %></td>
+    <td><%= button_to "Send Reminder" ,trigger_email_member_path(members_list)%></td>
+  </tr>
+ <%end%> 
+
+</table>

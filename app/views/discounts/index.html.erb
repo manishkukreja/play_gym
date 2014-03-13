@@ -1,0 +1,38 @@
+<h1>Listing discounts</h1>
+
+<table>
+  <tr>
+    <th>Discount Percent</th>
+    <th></th>
+    <th>Start date</th>
+    <th></th>
+    <th>End date</th>
+    <th></th>
+    <th>Membership ID</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @discounts.each do |discount| %>
+  <tr>
+    <td><%= discount.discount_percent %></td>
+    <th></th>
+    <td><%= discount.start_date %></td>
+    <th></th>
+    <td><%= discount.end_date %></td>
+    <th></th>
+    <th></th>
+    <td><%= discount.membership_id %></td>
+    <th></th>
+    <th></th>
+    <td><%= link_to 'Show', discount %></td>
+    <td><%= link_to 'Edit', edit_discount_path(discount) %></td>
+    <td><%= link_to 'Destroy', discount, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Discount', new_discount_path %>

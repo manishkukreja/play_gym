@@ -1,0 +1,39 @@
+<center>
+<!-- Box Start-->
+<div id="box_bg">
+  <div id="login-content">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <h1>Sign In</h1>
+      <!-- Social Buttons -->
+      <div class="social">
+      Sign in using social network:<br>
+      <div class="twitter"><a href="/auth/twitter" class="btn_1">Login with Twitter</a></div>
+      <div class="fb"><a href="/auth/facebook" class="btn_2">Login with Facebook</a></div>
+      </div>
+      <!-- Login Fields -->
+      <div id="login">Sign in using your registered account:<br>
+        <%= f.email_field :email, :autofocus => true, class: "login user", required: true %>
+        <%= f.password_field :password, class: "login password", required: true %>
+      </div>
+      <%= f.submit "Sign In", class: "button_submit" %>
+      <% if devise_mapping.rememberable? -%>
+      <!-- Checkbox -->
+      <div class="checkbox">
+      <li>
+      <fieldset>
+      <!--[if !IE | (gte IE 8)]--><legend id="title2" class="desc"></legend><!--[endif]-->
+      <!--[if lt IE 8]><label id="title2" class="desc"></label><![endif]-->
+      <div>
+        <span>
+        <input id="Field" name="Field" type="checkbox" class="field checkbox" value="First Choice" tabindex="4" onchange="handleInput(this);">
+        <label class="choice" for="Field">Keep me signed in</label>
+        </span>
+      </div>
+      </fieldset>
+      </li>
+      </div>
+      <% end -%>
+    <% end %>
+  </div>
+</div>
+</center>

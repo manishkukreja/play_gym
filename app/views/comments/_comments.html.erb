@@ -1,0 +1,11 @@
+<ul id="comments">
+  <% if @comments.size > 0 %>
+    <% @comments.each do |comment| %>
+      <p><li><b><%= comment.content %></b></li>
+        <i>by <%= User.find(comment.user_id).username%> on <%=comment.created_at%></i>
+      </p>
+    <% end %>
+  <% else%>
+      <p>No Comments yet !!!!</p>  
+  <%end%>
+</ul>

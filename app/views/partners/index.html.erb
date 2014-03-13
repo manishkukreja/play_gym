@@ -1,0 +1,52 @@
+<h1>Listing partners</h1>
+
+<ul class="thumbnails">
+  <% @reading_partners.each do |partner| %>
+    <li class="span3">
+      <div class="thumbnail">
+        <%= link_to image_tag(partner.image_url), partner_path(partner) %>
+        <h4><%= partner.name %></h4>
+        <p><%= truncate(partner.information,omission: "...", length: 30 )%></p>
+        <!-- <button class="btn btn-mini"><i><%#=link_to "More...", program_path(program.id) %></i></button> -->
+        </div>  
+    </li>
+  <% end %>
+</ul>
+<br/>   
+
+<ul class="thumbnails">
+  <% @dining_partners.each do |partner| %>
+    <li class="span3">
+      <div class="thumbnail">
+        <%= link_to image_tag(partner.image_url), partner_path(partner) %>
+        <h4><%= partner.name %></h4>
+        <p><%= truncate(partner.information,omission: "...", length: 30 )%></p>
+        </div>  
+    </li>
+  <% end %>
+</ul>
+<br />
+     <!--  <div class="span3 offset2">
+        <ul class="bxslider">
+          <%# bucket=[]%>
+          <%# for partner in @dining_partners%>
+            <%# bucket << partner.image_url%>
+            <li>
+            <%#=  link_to image_tag(partner.image_url), partner_path(partner.id) %>
+            </li>
+          <%# end %>   
+        </ul>
+      </div> -->    
+
+
+<%= link_to 'New Partner', new_partner_path if current_user && current_user.admin %>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('.bxslider').bxSlider({
+    auto: true,
+    autoControls: true
+  });
+});
+</script>  

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Activity:</b>
+  <%= @activity_image.activity_id %>
+</p>
+
+<p>
+  <b>Image 1:</b>
+  <%= image_tag @activity_image.image_1_url.to_s %>
+</p>
+
+<p>
+  <b>Image 2:</b>
+  <%= @activity_image.image_2 %>
+</p>
+
+<p>
+  <b>Image 3:</b>
+  <%= @activity_image.image_3 %>
+</p>
+
+<p>
+  <b>Image 4:</b>
+  <%= @activity_image.image_4 %>
+</p>
+
+<p>
+  <b>Image 5:</b>
+  <%= @activity_image.image_5 %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_image_path(@activity_image) %> |
+<%= link_to 'Back', activity_images_path %>

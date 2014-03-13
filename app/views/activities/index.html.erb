@@ -1,0 +1,41 @@
+<%= flash[:notice]%>
+
+<div width = '600px' height='300px' overflow='scroll'><%= render 'about_programs'%></>
+
+<h4> Below are the various programs available for Children</h4>
+
+
+
+<ul class="thumbnails">
+
+  <% @activities.each do |program| %>
+    <li class="span3">
+      <div class="thumbnail">
+        <%= image_tag program.image_path_url if program.image_path.present? %>
+        <h4><%= program.activity_name %></h4>
+        <p><%= truncate(program.description,omission: "...", length: 30 )%></p>
+        <button class="btn btn-mini"><i><%=link_to "More...", activity_path(program.id) %></i></button>
+        </div>  
+    </li>
+  <% end %>
+</ul>
+<br />
+
+<%= link_to 'New Program', new_activity_path if current_user && current_user.admin %>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=178653772295729";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#navbar').scrollspy()
+  })
+</script>
+
+<%= link_to "Back to Home" ,:root%>
+

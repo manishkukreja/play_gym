@@ -1,0 +1,247 @@
+#box_bg {
+    background: url(body-bg.png);
+    color: #838383;
+    font: 13px "Droid Sans",Arial,Helvetica,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 20px;
+}
+
+#box_bg {
+    border: 1px solid #d5d5d5;
+    width: 380px;
+    display: block;
+    margin: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px #dadada,inset 0 -3px 0 #e6e6e6;
+}
+
+#login-content {
+    padding: 23px 28px;
+}
+
+.social {
+    padding: 13px 0 0 0;
+    height: 75px;
+}
+
+.blue {
+    color: #2b83b6;
+}
+
+.twitter {
+    background: url(twitter_btn.png) no-repeat;
+    height: 32px;
+    width: 157px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+
+.twitter:hover {
+    background: url(twitter_btn.png) no-repeat;
+    background-position: 0 -32px;
+}
+
+.twitter:active {
+    margin-top: 11px;
+}
+
+.btn_1 {
+    padding: 8px 0 0 35px;
+    text-shadow: -1px -1px 0 #0083b3;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    height: 32px;
+    display: block;
+}
+
+.btn_1:hover, .btn_2:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.fb {
+    background: url(fb_btn.png) no-repeat;
+    height: 32px;
+    width: 157px;
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+
+.fb:hover {
+    background: url(fb_btn.png) no-repeat;
+    background-position: 0 -32px;
+}
+
+.fb:active {
+    margin-top: 11px;
+}
+
+.btn_2 {
+    padding: 8px 0 0 31px;
+    text-shadow: -1px -1px 0 #366c96;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    height: 32px;
+    display: block;
+}
+
+.button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    float: right;
+    margin-top: 18px;
+}
+
+.button a {
+    padding: 9px 26px 8px 26px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+}
+
+input[type="submit"].button_submit {
+    background-image: linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
+    background-image: -o-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
+    background-image: -moz-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
+    background-image: -webkit-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
+    background-image: -ms-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #13A7C7),color-stop(1, #13A7C7));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#58BD56, endColorstr=#13A7C7)";
+    border: 1px solid #13A7C7;
+    border-bottom: 2px solid #13A7C7;
+    box-shadow: inset 0 1px 0 #13A7C7;
+    text-shadow: -1px -1px 0 #369135;
+    background-color: #13A7C7;
+    padding: 9px 26px 8px 26px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    margin-top: 19px;
+    float: right;
+}
+
+input[type="submit"].button_submit:hover {
+    background: rgba(19,167,199,0.8);
+}
+
+#login {
+    padding: 13px 0 0 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.login {
+    font-size: 14px;
+    color: #8e8d8d;
+    font-family: "Droid Sans";
+    padding: 11px 15px 10px 50px;
+    background-color: #13A7C7;
+    width: 100%;
+    display: block;
+    border: 1px solid #d8d8d8;
+    margin: 13px 0 -3px 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: inset 2px 2px 4px #f1f1f1;
+}
+
+.user {
+    background: url(user.png) no-repeat;
+}
+
+.password {
+    background: url(password.png) no-repeat;
+}
+
+.checkbox {
+    margin: 30px 0 15px 0;
+}
+
+.checkbox li {
+    list-style: none;
+    height: 15px;
+}
+
+.checkbox li:not(#foo)>fieldset>div>span>input[type="checkbox"] {
+    opacity: 0;
+    float: left;
+    width: 15px;
+}
+
+.checkbox li:not(#foo)>fieldset>div>span>input[type="checkbox"]+label {
+    margin: 0;
+    clear: none;
+    padding: 0 0 0 22px;
+    cursor: pointer;
+    background: url(check.png) no-repeat;
+    height: 15px;
+    display: block;
+}
+
+.checkbox li:not(#foo)>fieldset>div>span>input[type="checkbox"]:checked+label {
+    background: url(check.png) no-repeat;
+    height: 15px;
+    display: block;
+    background-position: 0 -15px;
+}
+
+#bottom_text {
+    margin: 12px auto;
+    width: 300px;
+    display: block;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    line-height: 19px;
+}
+
+#bottom_text a {
+    color: #13A7C7;
+    font-weight: 700;
+    padding: 0 8px 0 0;
+    background: url(bullet.png) no-repeat 100% 50%;
+}
+
+#bottom_text a:hover {
+    color: #878787;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .3s linear;
+    -transition: all .2s linear;
+}
+
+#blue {
+    color: #2b83b6!important;
+}
+
+#blue:hover {
+    color: #878787!important;
+}
+
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v3/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v3/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Activity:</b>
+  <%= @activity_skill.program_id %>
+</p>
+
+<p>
+  <b>Skill:</b>
+  <%= @activity_skill.skill_id %>
+</p>
+
+<% if current_user && current_user.admin%>
+	<%= link_to 'Edit', edit_activity_skill_path(@activity_skill) %> |
+	<%= button_to "Delete Me", @activity_skill, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end%>
+<%= link_to 'Back', activity_skills_path %>

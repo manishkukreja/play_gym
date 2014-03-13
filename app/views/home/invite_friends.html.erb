@@ -1,0 +1,11 @@
+<%= form_tag "", :method => :get do %>
+  <div class="field">
+    <%= label_tag :friend_name %><br />
+    <%= text_field_tag :friend_name %>
+  </div>
+  <div class="field">
+    <%= label_tag :friend_email %><br />
+    <%= text_field_tag :friend_email %>
+  </div>
+  <%= submit_tag "Send Invitation" %>
+<%end%>

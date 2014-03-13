@@ -1,0 +1,23 @@
+<h1>Listing Activity Skills</h1>
+
+<table>
+  <tr>
+    <th>Activity</th>
+    <th>Skill</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @activity_skills.each do |activity_skill| %>
+  <tr>
+    <td><%= activity_skill.program_id %></td>
+    <td><%= activity_skill.skill_id %></td>
+    <td><%= link_to 'Show', activity_skill %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Activity skill', new_activity_skill_path %>

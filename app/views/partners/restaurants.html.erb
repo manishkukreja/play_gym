@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="offset2 btn-group">
+  	<button class="active btn" id='intro'><%= link_to "Intro",'#'%></button>
+	  <button class="btn" id='mcd'><%= link_to "McD",'#'%></button>
+	  <button class="btn" id='ccd'><%= link_to "CCD",'#'%></button>
+	  <button class="btn" id='dominos'><%= link_to "Dominos",'#'%></button>
+	</div>  
+		<!-- <nav>
+		  <ul class="nav nav-pills nav-stacked span2">
+		    <li><%#= link_to "About Restro", about_restro ,:remote=> true	%></li>
+		    <li><%#= link_to "Menu",'#'%></li>
+		    <li><%#= link_to "Contact Us",'#'%></li>
+		  </ul>
+		</nav> -->
+			
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.btn').click(function(){
+		var btn_clicked = $(this).attr('id')
+		alert(btn_clicked)
+		{
+			$.ajax({
+				// alert(btn_clicked)
+		// 		url: "restaurants/" + btn_clicked,
+		// 		data: {btn_clicked},
+		// 		success: function(data){
+		// 			alert('passed')
+		// 		},
+		// 		error: function(data){
+		// 			alert('failed')
+		// 		}
+			});
+
+		}
+	})
+})
+</script>

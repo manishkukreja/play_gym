@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playgym</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <%= render "/shared/header" %>
+    
+    <%= yield :carousel %>
+    
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+      <%= yield %>
+      <%= render "/shared/footer" %>
+    </div><!-- /.container -->
+  	<%= javascript_include_tag "application" %>    
+</body>
+</html>

@@ -1,0 +1,29 @@
+.navbar-inverse{
+	background-color: #fff;
+	border-color: #fff;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus{
+	background-color: #DC6D05;
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
+	background-color: #A6A6A8;
+}
+.navbar-static-top{
+	border-width: 0;
+}
+.navbar-inverse .navbar-nav>li>a.color1:hover, .navbar-inverse .navbar-nav>li>a.color1:focus{background-color: #CE4D27}
+.navbar-inverse .navbar-nav>.active>a.color1, .navbar-inverse .navbar-nav>.active>a.color1:focus{background-color: #CE4D27}
+.navbar-inverse .navbar-nav>li>a.color2:hover, .navbar-inverse .navbar-nav>li>a.color2:focus{background-color: #4BB263}
+.navbar-inverse .navbar-nav>.active>a.color2, .navbar-inverse .navbar-nav>.active>a.color2:focus{background-color: #4BB263}
+.navbar-inverse .navbar-nav>li>a.color3:hover, .navbar-inverse .navbar-nav>li>a.color3:focus{background-color: #2F8CCC}
+.navbar-inverse .navbar-nav>.active>a.color3, .navbar-inverse .navbar-nav>.active>a.color3:focus{background-color: #2F8CCC}
+.navbar-inverse .navbar-nav>li>a.color4:hover, .navbar-inverse .navbar-nav>li>a.color4:focus{background-color: #E37225}
+.navbar-inverse .navbar-nav>.active>a.color4, .navbar-inverse .navbar-nav>.active>a.color4:focus{background-color: #E37225}
+.navbar-inverse .navbar-nav>li>a.color5:hover, .navbar-inverse .navbar-nav>li>a.color5:focus{background-color: #1ABC9C}
+.navbar-inverse .navbar-nav>.active>a.color5, .navbar-inverse .navbar-nav>.active>a.color5:focus{background-color: #1ABC9C}
+.navbar-inverse .navbar-nav>li>a.color6:hover, .navbar-inverse .navbar-nav>li>a.color6:focus{background-color: #EDBD1D}
+.navbar-inverse .navbar-nav>.active>a.color6, .navbar-inverse .navbar-nav>.active>a.color6:focus{background-color: #EDBD1D}
+.navbar-inverse .navbar-nav>li>a.color7:hover, .navbar-inverse .navbar-nav>li>a.color7:focus{background-color: #f572ff}
+.navbar-inverse .navbar-nav>.active>a.color7, .navbar-inverse .navbar-nav>.active>a.color7:focus{background-color: #f572ff}
+
+.marketing{margin-top:80px;}

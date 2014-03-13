@@ -1,0 +1,19 @@
+<ul class="thumbnails">
+
+  <% @events.each do |event| %>
+    <li class="span3">
+      <div class="thumbnail">
+        <%= image_tag event.image_path_url if event.image_path.present? %>
+        <h4><%= event.activity_name %></h4>
+        <p><%= truncate(event.description,omission: "...", length: 30 )%></p>
+        <button class="btn btn-mini"><i><%=link_to "More...", activity_path(event.id) %></i></button>
+        </div>  
+    </li>
+  <% end %>
+</ul>
+<br />
+
+</table>
+
+<br />
+<%= link_to 'Create New Event', new_activity_path if current_user && current_user.admin %>

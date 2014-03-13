@@ -1,0 +1,33 @@
+<h1>Listing activity_images</h1>
+
+<table>
+  <tr>
+    <th>Activity</th>
+    <th>Image 1</th>
+    <th>Image 2</th>
+    <th>Image 3</th>
+    <th>Image 4</th>
+    <th>Image 5</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @activity_images.each do |activity_image| %>
+  <tr>
+    <td><%= activity_image.activity_id %></td>
+    <td><%= image_tag activity_image.image_1_url.to_s %></td>
+    <td><%= activity_image.image_2 %></td>
+    <td><%= activity_image.image_3 %></td>
+    <td><%= activity_image.image_4 %></td>
+    <td><%= activity_image.image_5 %></td>
+    <td><%= link_to 'Show', activity_image %></td>
+    <td><%= link_to 'Edit', edit_activity_image_path(activity_image) %></td>
+    <td><%= link_to 'Destroy', activity_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Activity image', new_activity_image_path %>

@@ -1,0 +1,46 @@
+<%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Activity Name","Activity Name" %><br />
+    <%= f.text_field :activity_name %>
+  </div>
+  <div class="field">
+    <%= f.label :free %><br />
+    <%= f.check_box :free %>
+  </div>
+   <div class="field">
+    <%= f.label :category_id %><br />
+    <% for category in @categories %>
+    <%= f.radio_button('category_id',category.id) %><%= category.category_name%>
+    <%end%>
+  </div>
+  <div class="field">
+    <%= f.label "Skills" %><br />
+    <% for skill in @skills %>
+    <%= check_box_tag('skill_ids[]',skill.id,  @activity_skills.present? && @activity_skills.include?(skill.id) ? true : false) %><%= skill.skill_name%>
+    <%end%>
+  </div>
+    <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+    </div>
+    <div class="field">
+    <%= f.label "Image Path","Image Path" %><br />
+    <%= f.file_field :image_path %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
