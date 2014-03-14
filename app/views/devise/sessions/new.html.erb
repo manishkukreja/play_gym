@@ -12,8 +12,8 @@
       </div>
       <!-- Login Fields -->
       <div id="login">Sign in using your registered account:<br>
-        <%= f.email_field :email, :autofocus => true, class: "login user", required: true %>
-        <%= f.password_field :password, class: "login password", required: true %>
+        <%= f.email_field :email, :autofocus => true, class: "login user", required: true, placeholder: "Email" %>
+        <%= f.password_field :password, class: "login password", required: true, placeholder: "Password" %>
       </div>
       <%= f.submit "Sign In", class: "button_submit" %>
       <% if devise_mapping.rememberable? -%>
