@@ -6,7 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
 	def create
 		user = User.new(params.require(:user).permit(:email, :first_name, :last_name, :username, :password, :password_confirmation))
 		if user.save
-			UserMailer.invitation(current_user).deliver 
 			sign_in :user, user
 			redirect_to root_path
 		else

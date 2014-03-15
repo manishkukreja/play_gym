@@ -40,7 +40,7 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(params[:member])
+    @member = Member.new(as_params(params))
 
     respond_to do |format|
       if @member.save
@@ -60,7 +60,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
 
     respond_to do |format|
-      if @member.update_attributes(params[:member])
+      if @member.update_attributes(as_params(params))
         format.html { redirect_to @member, notice: 'Member was successfully updated.' }
         format.json { head :no_content }
       else
@@ -100,6 +100,10 @@ class MembersController < ApplicationController
   def trigger_email(members_list)
     UserMailer.last_day_reminder(members_list).deliver
   end
-  
+    
+  private
+  def as_params params
+    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date)
+  end
 
 end

@@ -10,6 +10,19 @@ Playgym::Application.routes.draw do
 		end
 	end
 
+	resources :discounts
+	resources :activity_pictures
+	resources :activity_images
+	resources :social_authentications
+	resources :partners do
+		collection do 
+			get 'dining'
+			get 'reading'
+		end
+	end
+
+	resources :activity_skills
+	resources :skills
   	resources :memberships
 
 	resources :home do
@@ -32,6 +45,13 @@ Playgym::Application.routes.draw do
 	devise_for :users, controllers: { registrations: "registrations" } do
 		match "users/sign_out" => 'devise/sessions#destroy'
 	end	
+
+	resources :users
+		resources :comments do
+		collection do
+			get 'all_comments'
+		end
+	end
 
   	post '/auth/:provider/callback' => 'social_authentications#create'
 end
