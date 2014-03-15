@@ -114,7 +114,7 @@ p {
     display: block;
 }
 
-input[type="submit"].button_submit {
+input[type="submit"].button_submit, input[type="button"].button_submit {
     background-image: linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
     background-image: -o-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
     background-image: -moz-linear-gradient(bottom, #13A7C7 0%, #13A7C7 100%);
@@ -135,8 +135,7 @@ input[type="submit"].button_submit {
     margin-top: 19px;
     float: right;
 }
-
-input[type="submit"].button_submit:hover {
+input[type="submit"].button_submit:hover, input[type="button"].button_submit:hover {
     background: rgba(19,167,199,0.8);
 }
 
@@ -170,7 +169,7 @@ input[type="submit"].button_submit:hover {
 }
 
 .checkbox {
-    margin: 30px 0 15px 0;
+    margin: 10px 0 10px 0;
 }
 
 .checkbox li {
@@ -244,4 +243,8 @@ input[type="submit"].button_submit:hover {
   font-style: normal;
   font-weight: 700;
   src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v3/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+
+legend{
+    border-bottom: none;    
 }

@@ -29,7 +29,7 @@ Playgym::Application.routes.draw do
 		resources :comments
 	end
 	  	
-	devise_for :users do
+	devise_for :users, controllers: { registrations: "registrations" } do
 		match "users/sign_out" => 'devise/sessions#destroy'
 	end	
 

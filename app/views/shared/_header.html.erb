@@ -19,7 +19,13 @@
             <li class='<%= "active" if controller.action_name == "coming_soon" %>'><%= link_to "Social", coming_soon_home_index_path, class: "color4" %></li>
             <li class='<%= "active" if controller.action_name == "coming_soon1" %>'><%= link_to "Our Partners", coming_soon_home_index_path, class: "color5" %></li>
             <li class='<%= "active" if controller.action_name == "coming_soon2" %>'><%= link_to "About Us", coming_soon_home_index_path, class: "color6" %></li>
-            <li class='<%= "active" if controller.action_name == "sign_in" %>'><%= link_to "Admin Login", new_user_session_path, class: "color7" %></li>
+            <li class='<%= "active" if controller.controller_name == "sessions" && controller.action_name == "new" %>'>
+              <% if user_signed_in? %>
+                <%= link_to "Admin Logout", destroy_user_session_path, method: :delete, class: "color7" %>
+              <% else %>
+                <%= link_to "Admin Login", new_user_session_path, class: "color7" %>
+              <% end %>
+            </li>
           </ul>          
         </div>
       </div>

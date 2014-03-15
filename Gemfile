@@ -59,3 +59,4 @@ gem 'omniauth-google-oauth2', :git => 'https://github.com/zquestz/omniauth-googl
 gem 'google-api-client' ,:require => 'google/api_client'
 gem 'fb_graph'
 gem 'nifty-generators'
+gem 'pry'

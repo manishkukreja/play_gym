@@ -4,17 +4,16 @@
   <div id="login-content">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <h1>Sign Up</h1>
-      
       <%= devise_error_messages! %>
-     <div id="login">
+      <div id="login">
         <%= f.email_field :email, :autofocus => true, class: "login user", required: true, placeholder: "Email" %>
-        <%= f.text_field :username, class: "login password", required: true, placeholder: "Username" %>
-        <%= f.text_field :first_name, class: "login password", required: true, placeholder: "First Name" %>
-        <%= f.text_field :last_name, class: "login password", required: true, placeholder: "Last Name" %>
-        <%= f.password_field :password, class: "login password", required: true, placeholder: "Password" %>
-        <%= f.password_field :password_confirmation, class: "login password", required: true, placeholder: "Password Confirmation" %>
+        <%= f.text_field :username, class: "login user", required: true, placeholder: "Username" %>
+        <%= f.text_field :first_name, class: "login user", required: true, placeholder: "First Name" %>
+        <%= f.text_field :last_name, class: "login user", required: true, placeholder: "Last Name" %>
+        <%= f.password_field :password, class: "login user", required: true, placeholder: "Password" %>
+        <%= f.password_field :password_confirmation, class: "login user", required: true, placeholder: "Password Confirmation" %>
       </div>
-      <%= f.submit "Sign In", class: "button_submit" %>
+      <%= f.submit "Sign Up", class: "button_submit" %>
       <!-- Checkbox -->
       <div class="checkbox">
       <li>
