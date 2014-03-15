@@ -1,4 +1,5 @@
 namespace :initial_data do
+
 	task :category_data => :environment do
 		#Category.delete_all
 		Categories.create(:category_name => 'Program')
@@ -56,7 +57,4 @@ namespace :initial_data do
 		Discount.create(:discount_percent => 10 ,:start_date => Date.today , :end_date => Date.today + 7)
 	end	
 
-
-
 end
-
