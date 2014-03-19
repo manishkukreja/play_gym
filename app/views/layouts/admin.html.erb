@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playgym | Admin</title>
+  <%= stylesheet_link_tag    "admin" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "/admin/shared/header" %>  
+  <%= render "/admin/shared/aside" %>
+    
+  <section id="main" class="column">
+    <%= yield %>    
+  </section>
+
+</body>
+</html>

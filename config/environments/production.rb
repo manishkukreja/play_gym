@@ -77,4 +77,10 @@ Playgym::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.assets.precompile += %w( admin.css )
+  config.assets.precompile += %w( admin.js )
+
+  config.assets.precompile += %w( application.css )
+  config.assets.precompile += %w( application.js )  
 end

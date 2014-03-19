@@ -1,0 +1,77 @@
+<% content_for :title do %>
+	<%= "Members" %>
+<% end %>
+
+<article class="module width_3_quarter">
+    <header><h3 class="tabs_involved">List of All Members</h3>
+    <ul class="tabs">
+        <li><a href="#tab1">All</a></li>
+        <li><a href="#tab2"><i class="fa fa-bell-o"></i> Birthday</a></li>
+        <li><a href="#tab2"><i class="fa fa-calendar-o"></i> Expire Membership</a></li>
+    </ul>
+    </header>
+
+    <div class="tab_container">
+      <div id="tab1" class="tab_content">
+      <table class="tablesorter" cellspacing="0"> 
+      <thead> 
+        <tr> 
+            <th>Name</th>
+            <th>Email</th>
+            <th>Membership Type</th> 
+            <th>Start Date</th> 
+            <th>End Date</th> 
+            <th>DOB</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr> 
+      </thead> 
+      <tbody>
+      	<% @members.each do |member| %>
+	        <tr> 
+	            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
+	            <td><%= "#{member.email}" rescue "" %></td>   
+	            <td><%= "#{member.membership_type}" rescue "" %></td>
+	            <td><%= "#{member.start_date.strftime("%d-%M %Y")}" rescue "" %></td>
+	            <td><%= "#{member.end_date.strftime("%d-%M %Y")}" rescue "" %></td>
+	            <td><%= "#{member.status}" rescue "" %></td>
+	            <td><%= "#{member.dob.strftime("%d-%M %Y")}" rescue "" %></td>
+	        </tr>
+        <% end %>
+      </tbody>
+      </table>
+      </div><!-- end of #tab1 -->
+      
+      <div id="tab2" class="tab_content">
+      	<table class="tablesorter" cellspacing="0"> 
+			<thead>
+	        <tr> 
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th>Membership Type</th> 
+	            <th>Start Date</th> 
+	            <th>End Date</th> 
+	            <th>DOB</th>
+	            <th>Status</th>
+	            <th>Actions</th>
+	        </tr> 
+	      	</thead>
+	      	<tbody>
+	      	<% @members.each do |member| %>
+		        <tr> 
+		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
+		            <td><%= "#{member.email}" rescue "" %></td>   
+		            <td><%= "#{member.membership_type}" rescue "" %></td>
+		            <td><%= "#{member.start_date.strftime("%d-%M %Y")}" rescue "" %></td>
+		            <td><%= "#{member.end_date.strftime("%d-%M %Y")}" rescue "" %></td>
+		            <td><%= "#{member.status}" rescue "" %></td>
+		            <td><%= "#{member.dob.strftime("%d-%M %Y")}" rescue "" %></td>
+		        </tr>
+	        <% end %>
+	      	</tbody>
+      	</table>
+      </div><!-- end of #tab2 -->
+      
+    </div><!-- end of .tab_container -->
+    
+</article><!-- end of content manager article -->

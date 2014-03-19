@@ -1,4 +1,5 @@
 Playgym::Application.routes.draw do
+  get "members/index"
   	root :to => 'home#index'
 	
 	resources :members do
@@ -9,7 +10,12 @@ Playgym::Application.routes.draw do
 			post 'trigger_email'
 		end
 	end
-
+	
+	namespace :admin do
+		get "/dashboard" => "dashboard#index"
+		get "/members" => "members#index"
+	end
+	
 	resources :discounts
 	resources :activity_pictures
 	resources :activity_images

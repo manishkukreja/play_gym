@@ -32,10 +32,10 @@ class MembersController < ApplicationController
     end
   end
 
-  # GET /members/1/edit
-  def edit
-    @member = Member.find(params[:id])
-  end
+  # # GET /members/1/edit
+  # def edit
+  #   @member = Member.find(params[:id])
+  # end
 
   # POST /members
   # POST /members.json
@@ -54,33 +54,33 @@ class MembersController < ApplicationController
     end
   end
 
-  # PUT /members/1
-  # PUT /members/1.json
-  def update
-    @member = Member.find(params[:id])
+  # # PUT /members/1
+  # # PUT /members/1.json
+  # def update
+  #   @member = Member.find(params[:id])
 
-    respond_to do |format|
-      if @member.update_attributes(as_params(params))
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @member.update_attributes(as_params(params))
+  #       format.html { redirect_to @member, notice: 'Member was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: "edit" }
+  #       format.json { render json: @member.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /members/1
-  # DELETE /members/1.json
-  def destroy
-    @member = Member.find(params[:id])
-    @member.destroy
+  # # DELETE /members/1
+  # # DELETE /members/1.json
+  # def destroy
+  #   @member = Member.find(params[:id])
+  #   @member.destroy
 
-    respond_to do |format|
-      format.html { redirect_to members_url }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to members_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   def find_birthday
     
@@ -103,7 +103,7 @@ class MembersController < ApplicationController
     
   private
   def as_params params
-    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date)
+    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date, :dob)
   end
 
 end
