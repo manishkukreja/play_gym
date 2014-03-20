@@ -3,49 +3,51 @@
 <% end %>
 
 <article class="module width_3_quarter">
-    <header><h3 class="tabs_involved">List of All Members</h3>
+    <header><h3 class="tabs_involved">List of All Members <img src='/assets/throbber.svg' id="img_loader" style="visibility:hidden;"></h3>
     <ul class="tabs">
         <li><a href="#tab1">All</a></li>
         <li><a href="#tab2"><i class="fa fa-bell-o"></i> Birthday</a></li>
-        <li><a href="#tab2"><i class="fa fa-calendar-o"></i> Expire Membership</a></li>
+        <li><a href="#tab3"><i class="fa fa-calendar-o"></i> Expire Membership</a></li>
     </ul>
     </header>
 
     <div class="tab_container">
-      <div id="tab1" class="tab_content">
-      <table class="tablesorter" cellspacing="0"> 
-      <thead> 
-        <tr> 
-            <th>Name</th>
-            <th>Email</th>
-            <th>Membership Type</th> 
-            <th>Start Date</th> 
-            <th>End Date</th> 
-            <th>DOB</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr> 
-      </thead> 
-      <tbody>
-      	<% @members.each do |member| %>
+      	<div id="tab1" class="tab_content">
+      	<table class="tablesorter" cellspacing="0">
+	      <thead> 
 	        <tr> 
-	            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
-	            <td><%= "#{member.email}" rescue "" %></td>   
-	            <td><%= "#{member.membership_type}" rescue "" %></td>
-	            <td><%= "#{member.start_date.strftime("%d-%M %Y")}" rescue "" %></td>
-	            <td><%= "#{member.end_date.strftime("%d-%M %Y")}" rescue "" %></td>
-	            <td><%= "#{member.status}" rescue "" %></td>
-	            <td><%= "#{member.dob.strftime("%d-%M %Y")}" rescue "" %></td>
-	        </tr>
-        <% end %>
-      </tbody>
-      </table>
-      </div><!-- end of #tab1 -->
+	            <th>#</th>
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th>Membership Type</th> 
+	            <th>Start Date</th> 
+	            <th>End Date</th> 
+	            <th>DOB</th>
+	            <th>Status</th>
+	        </tr> 
+	      </thead> 
+	      <tbody>
+	      	<% @members.each do |member| %>
+		        <tr> 
+		            <td><%= member.id %></td>
+		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
+		            <td><%= "#{member.email}" rescue "" %></td>   
+		            <td><%= "#{member.membership_type}" rescue "" %></td>
+		            <td><%= "#{member.start_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.end_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.dob.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.status}" rescue "" %></td>		            
+		        </tr>
+	        <% end %>
+	      </tbody>
+      	</table>
+      	</div><!-- end of #tab1 -->
       
-      <div id="tab2" class="tab_content">
+      	<div id="tab2" class="tab_content">
       	<table class="tablesorter" cellspacing="0"> 
 			<thead>
 	        <tr> 
+	            <th>#</th>
 	            <th>Name</th>
 	            <th>Email</th>
 	            <th>Membership Type</th> 
@@ -57,21 +59,62 @@
 	        </tr> 
 	      	</thead>
 	      	<tbody>
-	      	<% @members.each do |member| %>
+	      	<% @members.where("dob = ? OR dob = ?", Date.today, Date.today+1.day).each do |member| %>
 		        <tr> 
+		            <td><%= member.id %></td>
 		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
 		            <td><%= "#{member.email}" rescue "" %></td>   
 		            <td><%= "#{member.membership_type}" rescue "" %></td>
-		            <td><%= "#{member.start_date.strftime("%d-%M %Y")}" rescue "" %></td>
-		            <td><%= "#{member.end_date.strftime("%d-%M %Y")}" rescue "" %></td>
+		            <td><%= "#{member.start_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.end_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.dob.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.status}" rescue "" %></td>
-		            <td><%= "#{member.dob.strftime("%d-%M %Y")}" rescue "" %></td>
+		            <td><center><%= link_to '<i class="fa fa-bell-o mail_birthday"></i>'.html_safe, admin_member_send_birthday_mail_path(member), method: :post, remote: true, title: "Send Mail Reminder of Birthday" %></center></td>
 		        </tr>
 	        <% end %>
 	      	</tbody>
       	</table>
-      </div><!-- end of #tab2 -->
+      	</div><!-- end of #tab2 -->
       
+      	<div id="tab3" class="tab_content">
+      	<table class="tablesorter" cellspacing="0"> 
+			<thead>
+	        <tr> 
+            	<th>#</th>
+	            <th>Name</th>
+	            <th>Email</th>
+	            <th>Membership Type</th> 
+	            <th>Start Date</th> 
+	            <th>End Date</th> 
+	            <th>DOB</th>
+	            <th>Status</th>
+	            <th>Actions</th>
+	        </tr> 
+	      	</thead>
+	      	<tbody>
+	      	<% @members.where("end_date = ? OR end_date = ?", Date.today+1.day, Date.today+2.day).each do |member| %>
+		        <tr> 
+		            <td><%= member.id %></td>
+		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
+		            <td><%= "#{member.email}" rescue "" %></td>   
+		            <td><%= "#{member.membership_type}" rescue "" %></td>
+		            <td><%= "#{member.start_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.end_date.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.dob.strftime("%d-%b %Y")}" rescue "" %></td>
+		            <td><%= "#{member.status}" rescue "" %></td>
+		            <td><center><%= link_to '<i class="fa fa-calendar-o mail_expiry"></i>'.html_safe, admin_member_send_last_day_reminder_mail_path(member), method: :post, remote: true, title: "Send Mail Reminder of Expire Membership" %></center></td>
+		        </tr>
+	        <% end %>
+	      	</tbody>
+      	</table>
+      	</div><!-- end of #tab2 -->
     </div><!-- end of .tab_container -->
     
 </article><!-- end of content manager article -->
+
+<script>
+	$(document).ready(function(){
+		$(".mail_birthday").click(function(){$("#img_loader").css({"visibility":"visible"});});
+		$(".mail_expiry").click(function(){$("#img_loader").css({"visibility":"visible"});});
+	});
+</script>

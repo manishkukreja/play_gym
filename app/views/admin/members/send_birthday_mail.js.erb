@@ -1,0 +1,6 @@
+$("#img_loader").css({"visibility":"hidden"});
+<% if @member.present? %>
+	alert("Mail sent successfully");
+<% else %>
+	alert("<%= @member.errors.full_messages.join(", ") %>");
+<% end %>
