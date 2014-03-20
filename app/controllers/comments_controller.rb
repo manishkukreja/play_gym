@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   #include Playgym::Authentication
   # GET /comments
   # GET /comments.json
-  before_filter :user_logged_in?
+  # before_filter :user_logged_in?
   #before_filter :user_admin? , :except=> [:index]
 
   def index

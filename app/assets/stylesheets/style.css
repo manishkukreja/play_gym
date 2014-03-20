@@ -26,4 +26,7 @@
 .navbar-inverse .navbar-nav>li>a.color7:hover, .navbar-inverse .navbar-nav>li>a.color7:focus{background-color: #ed4842}
 .navbar-inverse .navbar-nav>.active>a.color7, .navbar-inverse .navbar-nav>.active>a.color7:focus{background-color: #ed4842}
 
+.navbar-inverse .navbar-nav>li>.color7{color: #999;padding-top: 15px;padding-bottom: 15px;line-height: 30px;position: relative;display: block;padding: 10px 15px;cursor: pointer;}
+.navbar-inverse .navbar-nav>li>.color7:hover{background-color: #ed4842;color: #fff;}
+
 .marketing{margin-top:80px;}
