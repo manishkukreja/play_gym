@@ -41,7 +41,7 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(as_params(params))
-    @member.status = "active"
+    @member.status = true
     respond_to do |format|
       if @member.save
         UserMailer.invitation(@member).deliver

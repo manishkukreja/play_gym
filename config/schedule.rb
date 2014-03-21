@@ -19,5 +19,5 @@
 
 # Learn more: http://github.com/javan/whenever
 every :day, :at => '12:20am', :roles => [:app] do
-  Member.where("end_date < ? AND status = 'active'", Date.today).update_all("status = 'inactive'")
+  Member.where("end_date < ? AND status = true", Date.today).update_all("status = false")
 end
