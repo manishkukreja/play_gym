@@ -60,3 +60,4 @@ gem 'google-api-client' ,:require => 'google/api_client'
 gem 'fb_graph'
 gem 'nifty-generators'
 gem 'pry'
+gem 'whenever', :require => false
