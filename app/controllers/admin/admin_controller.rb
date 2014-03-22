@@ -1,9 +1,13 @@
 class Admin::AdminController < ActionController::Base
 	layout "admin"
 	include ApplicationHelper
+	before_filter :authenticate_user!
 	before_filter :authenticate_admin
 
 	def authenticate_admin
-		@current_admin = User.where(admin: true).first.first_name rescue "ABC"
+		if !current_user.admin
+			flash[:error] = "You are not authorized to access this page!"
+			redirect_to root_path
+		end
 	end
 end
