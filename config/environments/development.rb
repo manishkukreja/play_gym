@@ -32,4 +32,6 @@ Playgym::Application.configure do
 
   config.assets.precompile += %w( application.css )
   config.assets.precompile += %w( application.js )  
+
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:d9cc35922d595c3c1b0f5f45d0dd8dc7@grideye.redistogo.com:9906/'
 end

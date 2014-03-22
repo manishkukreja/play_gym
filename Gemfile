@@ -60,4 +60,6 @@ gem 'google-api-client' ,:require => 'google/api_client'
 gem 'fb_graph'
 gem 'nifty-generators'
 gem 'pry'
-gem 'whenever', :require => false
+gem 'sidekiq', '~> 2.17.7'
+gem 'sidekiq-cron', '~> 0.2.0'
+gem 'redis'

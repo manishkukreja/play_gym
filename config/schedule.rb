@@ -18,6 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every :day, :at => '12:20am', :roles => [:app] do
-  Member.where("end_date < ? AND status = true", Date.today).update_all("status = false")
+set :output, "/home/onyx/rails_workspace/13-march-2014/playgym/log/cron.log"
+set :environment, "development"
+
+every :day, :at => '09:14pm' do
+	Sidekiq::Cron::Job.create(name: 'Member worker - every 2min', cron: '*/2 * * * *', klass: 'MemberWorker')
 end
