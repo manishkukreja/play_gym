@@ -83,4 +83,5 @@ Playgym::Application.configure do
 
   config.assets.precompile += %w( application.css )
   config.assets.precompile += %w( application.js )  
+
 end
