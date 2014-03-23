@@ -22,6 +22,14 @@
     <%= f.email_field :email, class: "form-control", id: "exampleInputEmail3", placeholder: "Enter Email", required: true %>
   </div>
   <div class="form-group">
+    <%= f.label "Phone1", for: "exampleInputPhone1" %>
+    <%= f.text_field :phone1, class: "form-control", id: "exampleInputPhone", placeholder: "Enter Phone1" %>
+  </div>
+   <div class="form-group">
+    <%= f.label "Phone2", for: "exampleInputPhone2" %>
+    <%= f.text_field :phone2, class: "form-control", id: "exampleInputPhone", placeholder: "Enter Phone2" %>
+  </div>
+ <div class="form-group">
     <%= f.label "Date of Birth", for: "exampleInputDOB" %>
     <%= f.date_field :dob, class: "form-control", id: "exampleInputDOB", placeholder: "Enter DOB" %>
   </div>

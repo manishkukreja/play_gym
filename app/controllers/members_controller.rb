@@ -103,7 +103,7 @@ class MembersController < ApplicationController
     
   private
   def as_params params
-    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date, :dob)
+    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date, :dob, :phone1, :phone2)
   end
 
 end

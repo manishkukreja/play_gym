@@ -13,6 +13,8 @@
 #  updated_at      :datetime
 #  status          :boolean
 #  dob             :date
+#  phone1          :string(255)
+#  phone2          :string(255)
 #
 
 class Member < ActiveRecord::Base
