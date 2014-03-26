@@ -44,6 +44,7 @@ class CommentsController < ApplicationController
   end
 
   def post_comment
+    print "------------params = #{params.to_json}-----------------"
     comment = Comment.new(email: params[:email], content: params[:content])
     comment.phone = params[:phone] if !params[:phone].blank?
     if params[:activity]
