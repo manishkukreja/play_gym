@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 
   def post_comment
     print "------------params = #{params.to_json}-----------------"
-    comment = Comment.new(email: params[:email], content: params[:content])
+    comment = Comment.new(email: params[:email], content: params[:comment])
     comment.phone = params[:phone] if !params[:phone].blank?
     if params[:activity]
       comment.commentable_id = params[:activity]

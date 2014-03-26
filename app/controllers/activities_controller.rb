@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
 	def show
 		@activity = Activity.find(params[:id])
 		@activity_skills = ActivitySkill.find_all_by_program_id(@activity.id)
-		@activity_comments = Comment.find_all_by_commentable_id(@activity.id)
+		@activity_comments = Comment.find_all_by_commentable_id_and_commentable_type(@activity.id, "Activity")
 
 		respond_to do |format|
 			format.html # show.html.erb

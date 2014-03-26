@@ -35,7 +35,12 @@
 <%if @activity_comments%>
   <% @activity_comments.each do |comment| %>
       <p><li><b><%= comment.content %></b></li>
-        <i>by <%=User.find(comment.user_id).username%> on <%=comment.created_at%></i>
+        <% user = User.find_by_email(comment.email) %>
+        <% if !user.nil? %>
+          <i>by <%=User.find_by_email(comment.email).username rescue "" %> on <%=comment.created_at.strftime("%d-%B %Y")%></i>
+        <% else %>
+          <i>posted on <%=comment.created_at.strftime("%d-%B %Y")%></i>
+        <% end %>
       </p>
     <% end %>
  <%else%>
@@ -48,8 +53,8 @@
     <%= f.label :content %><br />
     <%= f.text_area :content, :rows => 5 %>
   </div>
-  <%= f.hidden_field "commentable_id",:value=> params[:id]%>
-  <%= f.hidden_field "commentable_type",:value=> Activity.find(params[:id]).category_name%>
+  <%= f.hidden_field "commentable_id", :value=> params[:id] %>
+  <%= f.hidden_field "commentable_type", :value=> "Activity" %>
    <div class="actions">
     <%= submit_tag "Add comment" %>
   </div>

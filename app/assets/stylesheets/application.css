@@ -12,4 +12,30 @@
  *= require carousel.css
  *= require style.css
  *= require login.css
+ *= require font-awesome.min.css
  */
+
+.carousel1 {
+	height: 100px;
+	margin-bottom: auto;
+}
+
+.carousel1 .Item, .carousel1 .Item img{
+	height: 100px;
+	width: 100px;
+	margin-bottom: auto;
+}
+
+.carousel1 .Item .carousel-caption{
+	color: #999999;
+	margin-left: 100px;
+	height: 50%;
+	width: 800px;
+}
+.carousel-caption .fa{
+	font-size: 45px;
+}
+#carousel-example-generic{
+	width: 100%;
+	text-align: center;
+}
