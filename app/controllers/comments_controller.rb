@@ -43,6 +43,16 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def post_comment
+    comment = Comment.new(email: params[:email], content: params[:content])
+    comment.phone = params[:phone] if !params[:phone].blank?
+    if params[:activity]
+      comment.commentable_id = params[:activity]
+      comment.commentable_type = "Activity"
+    end
+    comment.save
+  end
+
   # POST /comments
   # POST /comments.json
   def create

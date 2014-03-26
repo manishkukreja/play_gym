@@ -9,6 +9,8 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  content          :text
+#  email            :string(255)
+#  phone            :string(255)
 #
 
 class Comment < ActiveRecord::Base

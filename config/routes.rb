@@ -1,5 +1,5 @@
 Playgym::Application.routes.draw do
-  get "members/index"
+  	get "members/index"
   	root :to => 'home#index'
 	
 	resources :members do
@@ -16,6 +16,7 @@ Playgym::Application.routes.draw do
 		resources :members do
 			post "send_birthday_mail" => "members#send_birthday_mail"
 			post "send_last_day_reminder_mail" => "members#send_last_day_reminder_mail"
+			post "expire", on: :collection
 		end
 	end
 	
@@ -58,6 +59,7 @@ Playgym::Application.routes.draw do
 	resources :users
 		resources :comments do
 		collection do
+			post 'post_comment'
 			get 'all_comments'
 		end
 	end

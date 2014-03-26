@@ -12,8 +12,18 @@ class Admin::MembersController < Admin::AdminController
   	UserMailer.birthday_notification(@member).deliver if @member.present?
   end
 
+  def expire
+    @members = Member.where(id: params[:member_ids].split(",")) rescue nil
+    @members.each do |member|
+      member.status = false
+      member.save
+    end
+    render json: {success: true, message: "Successfully status changed!"} and return
+  end
+
   def send_last_day_reminder_mail
   	@member = Member.find(params[:member_id]) rescue nil
   	UserMailer.last_day_reminder(@member).deliver if @member.present?
   end
+
 end

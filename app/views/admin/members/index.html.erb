@@ -3,6 +3,15 @@
 <% end %>
 
 <article class="module width_3_quarter">
+	<table>
+	<tr><td><div class="success" style="height:20px;width:20px;"></div><td>Birthday User
+	<td><div class="danger" style="height:20px;width:20px;"></div><td>Expire User
+	<td><div class="warning" style="height:20px;width:20px;"></div><td>Birthday & Expire
+	<td><%= link_to "Change Status", "javascript:expireMember()" %>
+	</table>
+</article>
+
+<article class="module width_3_quarter">
     <header><h3 class="tabs_involved">List of All Members <img src='/assets/throbber.svg' id="img_loader" style="visibility:hidden;"></h3>
     <ul class="tabs">
         <li><a href="#tab1">All</a></li>
@@ -15,7 +24,8 @@
       	<div id="tab1" class="tab_content">
       	<table class="tablesorter" cellspacing="0">
 	      <thead> 
-	        <tr> 
+          <tr>
+	          	<td><input type="checkbox" id="toggleCheckbox" name="checkAll"></td>
 	            <th>#</th>
 	            <th>Name</th>
 	            <th>Email</th>
@@ -28,15 +38,22 @@
 	      </thead> 
 	      <tbody>
 	      	<% @members.each do |member| %>
-		        <tr> 
+            <% if (member.dob == Date.today || member.dob == Date.today+1.day) && (member.end_date == Date.today+1.day || member.end_date == Date.today+2.day || member.status == false) %>
+            <tr class="warning">
+            <% elsif member.dob == Date.today || member.dob == Date.today+1.day %>
+            <tr class="success">
+            <% elsif member.end_date == Date.today+1.day || member.end_date == Date.today+2.day || member.status == false %>
+            <tr class="danger">
+            <% else %><tr><% end %>
+                <th><input type="checkbox" name="member_ids[]" class="member_ids" value="<%= member.id %>"></th>
 		            <td><%= member.id %></td>
 		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
-		            <td><%= "#{member.email}" rescue "" %></td>   
+		            <td><%= "#{member.email}" rescue "" %></td>
 		            <td><%= "#{member.membership_type}" rescue "" %></td>
 		            <td><%= "#{member.start_date.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.end_date.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.dob.strftime("%d-%b %Y")}" rescue "" %></td>
-		            <td><%= "#{member.status}" rescue "" %></td>		            
+		            <td><%= "#{member.status}" rescue "" %></td>
 		        </tr>
 	        <% end %>
 	      </tbody>
@@ -116,5 +133,24 @@
 	$(document).ready(function(){
 		$(".mail_birthday").click(function(){$("#img_loader").css({"visibility":"visible"});});
 		$(".mail_expiry").click(function(){$("#img_loader").css({"visibility":"visible"});});
+		$("#toggleCheckbox").click(function(){
+			if($("#toggleCheckbox").is(":checked") == true){
+				$(".member_ids").attr('checked', true);
+			}else{
+				$('.member_ids').attr('checked', false);
+			}
+		});
 	});
+
+	function expireMember(){
+		member_ids = []
+		$(".member_ids").each(function(){
+			if($(this).is(":checked"))
+				member_ids.push($(this).val());
+		});
+		$.post("/admin/members/expire",{member_ids: member_ids.join(",")}, function(){
+			alert('Successfully changed!')
+			window.location.href = "/admin/members"
+		});
+	}
 </script>
