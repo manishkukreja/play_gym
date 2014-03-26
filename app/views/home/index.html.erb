@@ -52,36 +52,21 @@
 
   <hr class="featurette-heading">
   <!-- What they say! <span class="text-muted"></span></h2> -->
+  <% Comment.where("commentable_id IS NULL").limit(3).each_with_index do |comment, index| %>
   <div class="row featurette">
     <div id="carousel-example-generic" class="carousel1 carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <div class="carousel-inner">
         <div class="Item item active">
-          <img src="/assets/c1.jpg" alt="...">
+          <img src=<%="/assets/c#{index+1}.jpg"%> alt="<%= comment.content %>">
           <div class="carousel-caption">
-            <i class="fa fa-quote-left"></i> Donec ullamcorper nulla non metus auctor fringilla.
-            <i class="fa fa-quote-right"></i>
-          </div>
-        </div>
-        <div class="Item item">
-          <img src="/assets/c2.jpg" alt="...">
-          <div class="carousel-caption">
-            <i class="fa fa-quote-left"></i>
-            Donec ullamcorper nulla non metus auctor fringilla.
-            <i class="fa fa-quote-right"></i>
-          </div>
-        </div>
-        <div class="Item item">
-          <img src="/assets/c3.jpg" alt="...">
-          <div class="carousel-caption">
-            <i class="fa fa-quote-left"></i>
-            Donec ullamcorper nulla non metus auctor fringilla.
+            <i class="fa fa-quote-left"></i> <%= comment.content %>
             <i class="fa fa-quote-right"></i>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <% end %>
   <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->
