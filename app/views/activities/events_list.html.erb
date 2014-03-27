@@ -1,19 +1,60 @@
-<ul class="thumbnails">
+<div class="container">
 
-  <% @events.each do |event| %>
-    <li class="span3">
-      <div class="thumbnail">
-        <%= image_tag event.image_path_url if event.image_path.present? %>
-        <h4><%= event.activity_name %></h4>
-        <p><%= truncate(event.description,omission: "...", length: 30 )%></p>
-        <button class="btn btn-mini"><i><%=link_to "More...", activity_path(event.id) %></i></button>
-        </div>  
-    </li>
-  <% end %>
-</ul>
-<br />
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/birthday_party.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Birthday Party</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/movie_night.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Movie Night</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-</table>
-
-<br />
-<%= link_to 'Create New Event', new_activity_path if current_user && current_user.admin %>
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/water_games.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Water Games</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
