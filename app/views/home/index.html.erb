@@ -68,6 +68,9 @@
             <i class="fa fa-quote-left"></i> <%= comment.content %>
             <i class="fa fa-quote-right"></i>
           </div>
+          <% if !comment.email.nil? %>
+          - By <%= comment.email rescue "" %>
+          <% end %>
         </div>
       </div>
     </div>

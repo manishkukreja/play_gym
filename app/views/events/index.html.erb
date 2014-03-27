@@ -1,26 +1,60 @@
-<h1>Listing events</h1>
+<div class="container">
 
-<table>
-  <tr>
-    <th>Event name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/birthday_party.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Birthday Party</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/movie_night.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Movie Night</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.event_name %></td>
-    <td><%= link_to 'Show', event %></td>
-    <%if current_user.admin%>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <%end%>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Event', new_event_path %> || 
-<%= link_to "Back to Home" , :root%>
+        <div class="col-xs-6 col-md-4">
+            <a href="#" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/water_games.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Water Games</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
