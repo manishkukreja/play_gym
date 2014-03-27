@@ -16,8 +16,8 @@
             <li class='<%= "active" if controller.controller_name == "memberships" %>'><%= link_to "Memberships", memberships_path, class: "color1" %></li>
             <li class='<%= "active" if controller.controller_name == "activities" && controller.action_name == "index" %>'><%= link_to "Programs & Clases", activities_path, class: "color2" %></li>
             <li class='<%= "active" if controller.action_name == "events_list" %>'><%= link_to "Events & Parties", events_list_activities_path, class: "color3" %></li>
-            <li class='<%= "active" if controller.action_name == "coming_soon" %>'><%= link_to "Social", coming_soon_home_index_path, class: "color4" %></li>
-            <li class='<%= "active" if controller.action_name == "coming_soon1" %>'><%= link_to "Our Partners", coming_soon_home_index_path, class: "color5" %></li>
+            <li class='<%= "active" if controller.action_name == "coming_soon" %>'><%= link_to "Social", "#", class: "color4" %></li>
+            <li class='<%= "active" if controller.action_name == "coming_soon1" %>'><%= link_to "Our Partners", "#", class: "color5" %></li>
             <li class='<%= "active" if controller.action_name == "coming_soon2" %>'><%= link_to "About Us", coming_soon_home_index_path, class: "color6" %></li>
             <li>
               <%#= link_to "Comment/Suggestion", "#", "data-target" => "#myModal", class: "color7" %>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>    
-    <%#= render "/shared/social_sdks" %>
+    <%= render "/shared/social_sdks" %>
   </div>
 </div>
 
