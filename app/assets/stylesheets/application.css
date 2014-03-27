@@ -58,3 +58,9 @@
     max-width: 1200px;
     height: 237px;
 }
+.ellipsis {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
