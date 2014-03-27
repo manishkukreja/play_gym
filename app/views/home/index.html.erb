@@ -69,10 +69,10 @@
               <div class="carousel-caption">
                 <i class="fa fa-quote-left"></i> <%= comment.content %>
                 <i class="fa fa-quote-right"></i>
+                <% if !comment.email.nil? %>
+                    <span class="by">- By <%= comment.email rescue "" %></span>
+                <% end %>
               </div>
-              <% if !comment.email.nil? %>
-              - By <%= comment.email rescue "" %>
-              <% end %>
             </div>
           </div>
         </div>
