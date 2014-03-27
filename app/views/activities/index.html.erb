@@ -1,41 +1,228 @@
-<%= flash[:notice]%>
+<div class="container">
 
-<div width = '600px' height='300px' overflow='scroll'><%= render 'about_programs'%></>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/boxing.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Boxing</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/climbing_wall.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Climbing Wall</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-<h4> Below are the various programs available for Children</h4>
-
-
-
-<ul class="thumbnails">
-
-  <% @activities.each do |program| %>
-    <li class="span3">
-      <div class="thumbnail">
-        <%= image_tag program.image_path_url if program.image_path.present? %>
-        <h4><%= program.activity_name %></h4>
-        <p><%= truncate(program.description,omission: "...", length: 30 )%></p>
-        <button class="btn btn-mini"><i><%=link_to "More...", activity_path(program.id) %></i></button>
-        </div>  
-    </li>
-  <% end %>
-</ul>
-<br />
-
-<%= link_to 'New Program', new_activity_path if current_user && current_user.admin %>
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=178653772295729";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#navbar').scrollspy()
-  })
-</script>
-
-<%= link_to "Back to Home" ,:root%>
-
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual">
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/football.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Football</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/hopping_ball.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Hopping Ball</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/hula_hoops.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Hula Hoops</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/karate.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Karate</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/lesar_tag.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Lesar Tag</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/ribbin_dance.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Ribbin Dance</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/rope_bridge1.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Rope Bridge</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/slackline_1.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Slackline</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/tennis_1.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Tennis</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <a href="/stories/digital-ocean" class="no-visual"> 
+                <div class="tile case-study-tile case-study-tile-large">
+                    <div class="top">
+                        <div class="image">
+                            <img src="/assets/programs/trampolin_jump.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="name tile-name-large">
+                            <span class="no-wrap ellipsis">Trampolin Jump</span>
+                        </div>
+                        <div class="divider">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
