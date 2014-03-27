@@ -30,14 +30,16 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">About Playgym <span class="text-muted"></span></h2>
-      <p class="lead">PlayGym is a creative, joyful and energetic play space for children of all ages. Connect with your inner child; let the imagination run wild through creative play! PlayGym has a variety of activities: Play equipment with rock climbing (wall), trampolines, boxing, soft play area (for toddlers), indoor tennis,& football, hopping balls, hula hoops, ribbon dance, climbing ropes, climbing nets & much more!</p>
-      <address>
-        <strong>Address:</strong> 7M-215, 7TH Main road (80 feet Road), 
-        HRBR Layout 2nd block, Kalyan nagar,
-        Banaswadi, Bangalore – 560043. 
-        <strong>Phone:</strong> 97318-37282
-      </address>
+        <h2 class="featurette-heading">About Playgym <span class="text-muted"></span></h2>
+        <p class="lead">
+            PlayGym is a creative, joyful and energetic play space for children of all ages. Connect with your inner child; let the imagination run wild through creative play! PlayGym has a variety of activities: Play equipment with rock climbing (wall), trampolines, boxing, soft play area (for toddlers), indoor tennis,& football, hopping balls, hula hoops, ribbon dance, climbing ropes, climbing nets & much more!
+            <address>
+                <strong>Address:</strong> 7M-215, 7TH Main road (80 feet Road), 
+                HRBR Layout 2nd block, Kalyan nagar,
+                Banaswadi, Bangalore – 560043. 
+                <strong>Phone:</strong> 97318-37282
+            </address>
+        </p>
     </div>
     <div class="col-md-5">
       <%= render "/shared/map" %>
@@ -51,30 +53,30 @@
       <%= render "/shared/google_calendar" %>
     </div>
     <div class="col-md-5">
-      <h2 class="featurette-heading">Oh yeah , we have a weekly calendar to help you plan your activities accordingly</span></h2>
+      <p class="lead">Oh yeah , we have a weekly calendar to help you plan your activities accordingly</span></p>
     </div>
   </div>
 
   <hr class="featurette-heading">
   <!-- What they say! <span class="text-muted"></span></h2> -->
-  <% Comment.where("commentable_id IS NULL").limit(3).each_with_index do |comment, index| %>
-  <div class="row featurette">
-    <div id="carousel-example-generic" class="carousel1 carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <div class="carousel-inner">
-        <div class="Item item active">
-          <img src=<%="/assets/c#{index+1}.jpg"%> alt="<%= comment.content %>">
-          <div class="carousel-caption">
-            <i class="fa fa-quote-left"></i> <%= comment.content %>
-            <i class="fa fa-quote-right"></i>
+    <div class="row featurette">
+    <% Comment.where("commentable_id IS NULL").limit(3).each_with_index do |comment, index| %>
+        <div id="carousel-example-generic" class="carousel1 carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-inner">
+            <div class="Item item active">
+              <img src=<%="/assets/c#{index+1}.jpg"%> alt="<%= comment.content %>">
+              <div class="carousel-caption">
+                <i class="fa fa-quote-left"></i> <%= comment.content %>
+                <i class="fa fa-quote-right"></i>
+              </div>
+              <% if !comment.email.nil? %>
+              - By <%= comment.email rescue "" %>
+              <% end %>
+            </div>
           </div>
-          <% if !comment.email.nil? %>
-          - By <%= comment.email rescue "" %>
-          <% end %>
         </div>
-      </div>
+    <% end %>
     </div>
-  </div>
-  <% end %>
   <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->
