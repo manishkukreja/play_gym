@@ -79,12 +79,12 @@
 	font-weight: bold;
 	color: #fff;
 }
-#accordion.panel1{
+#accordion>.panel1>.panel-heading{
 	background-color: #5CCCCC;
 }
-#accordion.panel1{
+#accordion>.panel2.panel-heading{
 	background-color: #C9F76F;
 }
-#accordion.panel1{
+#accordion>.panel3.panel-heading{
 	background-color: #FF7373;
 }
