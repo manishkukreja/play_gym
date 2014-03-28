@@ -15,6 +15,6 @@
 //= require jquery_ujs
 //= require bootstrap.min.js
 //= require docs.min.js
-// require underscore-min.js
+//= require underscore-min.js
 //= require gmaps_google.js
 //= require custom.js
