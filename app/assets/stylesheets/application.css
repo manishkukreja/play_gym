@@ -89,6 +89,9 @@ footer{
 .panel-default>.panel-heading{
 	background-color: none;
 }
+.panel-default{
+    border-color: none;
+}
 .panel1>.panel-heading{
 	background-color: #5CCCCC;
 }
@@ -97,4 +100,13 @@ footer{
 }
 .panel3>.panel-heading{
 	background-color: #FF7373;
+}
+.panel4>.panel-heading{
+	background-color: #DD64BF;
+}
+.panel5>.panel-heading{
+	background-color: #A69D00;
+}
+.panel6>.panel-heading{
+	background-color: #8942D6;
 }
