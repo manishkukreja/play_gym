@@ -15,12 +15,12 @@
  *= require font-awesome.min.css
  */
 .marketing{
-    min-height:100%;
+    min-height:500px;
     position:relative;
 }
 footer{
     position:absolute;
-    bottom:50px;
+    bottom:0;
 }
 .carousel1 {
 	height: 100px;
