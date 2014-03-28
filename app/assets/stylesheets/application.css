@@ -14,7 +14,14 @@
  *= require login.css
  *= require font-awesome.min.css
  */
-
+.marketing{
+    min-height:100%;
+    position:relative;
+}
+footer{
+    position:absolute;
+    bottom:50px;
+}
 .carousel1 {
 	height: 100px;
 	margin-bottom: auto;
