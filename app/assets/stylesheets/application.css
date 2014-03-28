@@ -90,7 +90,7 @@ footer{
 	background-color: none;
 }
 .panel-default{
-    border-color: none;
+    border-color: #fff;
 }
 .panel1>.panel-heading{
 	background-color: #5CCCCC;
