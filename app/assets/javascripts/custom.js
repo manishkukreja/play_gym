@@ -53,7 +53,7 @@
       $("#art_craft").val($('input[type=radio][name=art_craft]:checked').val());
     });
     $('input[type=radio][name=water_play]').change(function(){
-      $("#water_play").val($('input[type=radio][name=water_play]:checked').val();
+      $("#water_play").val($('input[type=radio][name=water_play]:checked').val());
     });
   });
 
