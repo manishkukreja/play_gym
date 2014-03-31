@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def authenticate_admin
-      if current_user.admin
+      if !current_user.admin
         flash[:error] = "You don't have priviliges to access this page!";
         redirect_to root_path
       end
