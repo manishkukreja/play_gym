@@ -1,9 +1,10 @@
 class CreateMemberActivities < ActiveRecord::Migration
   def change
     create_table :member_activities do |t|
-      t.integer :member_id
-      t.integer :activity_id
+      t.references :member, index: true
+      t.references :activity, index: true
       t.integer :freq
+
       t.timestamps
     end
   end

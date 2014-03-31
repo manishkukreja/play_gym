@@ -26,5 +26,5 @@ class Activity < ActiveRecord::Base
   mount_uploader :image_path , ActivityImageUploader
   scope :find_by_events, lambda{where('category_id = ?',3)}
   scope :find_by_programs, lambda{where('category_id = ?',2)}
-
+has_many :members
 end
