@@ -20,7 +20,7 @@
 }
 footer{
     position:absolute;
-    bottom:0;
+    bottom:-100px;
 }
 .carousel1 {
 	height: 100px;
