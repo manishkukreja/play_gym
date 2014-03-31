@@ -35,25 +35,25 @@
     });
     
     $('input[type=radio][name=football]').change(function(){
-      $("#football").val($('input[type=radio][name=football]:checked').val());
+      $("#football").html($('input[type=radio][name=football]:checked').val());
     });
     $('input[type=radio][name=tennis]').change(function(){
-      $("#tennis").val($('input[type=radio][name=tennis]:checked').val());
+      $("#tennis").html($('input[type=radio][name=tennis]:checked').val());
     });
     $('input[type=radio][name=yoga]').change(function(){
-      $("#yoga").val($('input[type=radio][name=yoga]:checked').val());
+      $("#yoga").html($('input[type=radio][name=yoga]:checked').val());
     });
     $('input[type=radio][name=karate]').change(function(){
-      $("#karate").val($('input[type=radio][name=karate]:checked').val());
+      $("#karate").html($('input[type=radio][name=karate]:checked').val());
     });
     $('input[type=radio][name=gymnastics]').change(function(){
-      $("#gymnatics").val($('input[type=radio][name=gymnastics]:checked').val());
+      $("#gymnatics").html($('input[type=radio][name=gymnastics]:checked').val());
     });
     $('input[type=radio][name=art_craft]').change(function(){
-      $("#art_craft").val($('input[type=radio][name=art_craft]:checked').val());
+      $("#art_craft").html($('input[type=radio][name=art_craft]:checked').val());
     });
     $('input[type=radio][name=water_play]').change(function(){
-      $("#water_play").val($('input[type=radio][name=water_play]:checked').val());
+      $("#water_play").html($('input[type=radio][name=water_play]:checked').val());
     });
   });
 
