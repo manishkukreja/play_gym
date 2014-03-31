@@ -1,61 +1,61 @@
 	$(document).ready(function(){
-    $(".membership_type").change(function(){
-      $("#exampleInputEmail4").removeAttr("disabled");
-      $("#exampleInputEmail4").removeAttr("title");
-      if($(this).val()=="1"){
-        $("#exampleInputEmail5").removeAttr("disabled");
-        $("#exampleInputEmail5").removeAttr("title");
-      } else {
-        $("#exampleInputEmail5").attr({"disabled":true});
-        $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
-      }
-      // $("input:radio[name='member[membership_type]']:checked").val();
-    });
-
-    $("#exampleInputEmail4").change(function(){     
-      $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
-    });
-
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([
-        {
-          "lng": 77.6430424,
-          "lat": 13.0178769,
-          "picture": {
-            // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-            // "width":  36,
-            // "height": 36
-          },
-          "infowindow": "<p><b>Address:</b>&nbsp 7M-215, 7TH Main road, HRBR Layout 2nd block, Kalyan nagar,Banaswadi, Bangalore - 560043</p>"
-        }
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    });
+        $(".membership_type").change(function(){
+          $("#exampleInputEmail4").removeAttr("disabled");
+          $("#exampleInputEmail4").removeAttr("title");
+          if($(this).val()=="1"){
+            $("#exampleInputEmail5").removeAttr("disabled");
+            $("#exampleInputEmail5").removeAttr("title");
+          } else {
+            $("#exampleInputEmail5").attr({"disabled":true});
+            $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
+          }
+          // $("input:radio[name='member[membership_type]']:checked").val();
+        });
     
-    $('input[type=radio][name=football]').change(function(){
-      $("#football").html($('input[type=radio][name=football]:checked').val());
+        $("#exampleInputEmail4").change(function(){     
+          $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
+        });
+    
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers([
+            {
+              "lng": 77.6430424,
+              "lat": 13.0178769,
+              "picture": {
+                // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+                // "width":  36,
+                // "height": 36
+              },
+              "infowindow": "<p><b>Address:</b>&nbsp 7M-215, 7TH Main road, HRBR Layout 2nd block, Kalyan nagar,Banaswadi, Bangalore - 560043</p>"
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+        
+        $('input[type=radio][name=football]').change(function(){
+          $("#football").html($('input[type=radio][name=football]:checked').val());
+        });
+        $('input[type=radio][name=tennis]').change(function(){
+          $("#tennis").html($('input[type=radio][name=tennis]:checked').val());
+        });
+        $('input[type=radio][name=yoga]').change(function(){
+          $("#yoga").html($('input[type=radio][name=yoga]:checked').val());
+        });
+        $('input[type=radio][name=karate]').change(function(){
+          $("#karate").html($('input[type=radio][name=karate]:checked').val());
+        });
+        $('input[type=radio][name=gymnastics]').change(function(){
+          $("#gymnatics").html($('input[type=radio][name=gymnastics]:checked').val());
+        });
+        $('input[type=radio][name=art_craft]').change(function(){
+          $("#art_craft").html($('input[type=radio][name=art_craft]:checked').val());
+        });
+        $('input[type=radio][name=water_play]').change(function(){
+          $("#water_play").html($('input[type=radio][name=water_play]:checked').val());
+        });
     });
-    $('input[type=radio][name=tennis]').change(function(){
-      $("#tennis").html($('input[type=radio][name=tennis]:checked').val());
-    });
-    $('input[type=radio][name=yoga]').change(function(){
-      $("#yoga").html($('input[type=radio][name=yoga]:checked').val());
-    });
-    $('input[type=radio][name=karate]').change(function(){
-      $("#karate").html($('input[type=radio][name=karate]:checked').val());
-    });
-    $('input[type=radio][name=gymnastics]').change(function(){
-      $("#gymnatics").html($('input[type=radio][name=gymnastics]:checked').val());
-    });
-    $('input[type=radio][name=art_craft]').change(function(){
-      $("#art_craft").html($('input[type=radio][name=art_craft]:checked').val());
-    });
-    $('input[type=radio][name=water_play]').change(function(){
-      $("#water_play").html($('input[type=radio][name=water_play]:checked').val());
-    });
-  });
 
   function checkForm(start_date, end_date)
   {
