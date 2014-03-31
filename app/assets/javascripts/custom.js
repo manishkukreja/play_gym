@@ -33,6 +33,28 @@
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
     });
+    
+    $('input[type=radio][name=football]').change(function(){
+      $("#football").val($(this).val());
+    });
+    $('input[type=radio][name=tennis]').change(function(){
+      $("#tennis").val($(this).val());
+    });
+    $('input[type=radio][name=yoga]').change(function(){
+      $("#yoga").val($(this).val());
+    });
+    $('input[type=radio][name=karate]').change(function(){
+      $("#karate").val($(this).val());
+    });
+    $('input[type=radio][name=gymnatics]').change(function(){
+      $("#gymnatics").val($(this).val());
+    });
+    $('input[type=radio][name=art_craft]').change(function(){
+      $("#art_craft").val($(this).val());
+    });
+    $('input[type=radio][name=water_play]').change(function(){
+      $("#water_play").val($(this).val());
+    });
   });
 
   function checkForm(start_date, end_date)
@@ -103,3 +125,4 @@
     var output = d.getFullYear() + sape + (month<10 ? '0' : '') + month + sape + (day<10 ? '0' : '') + day;
     return output;
   }
+  
