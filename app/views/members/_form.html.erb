@@ -48,6 +48,70 @@
     <%= f.date_field :end_date, class: "form-control", id: "exampleInputEmail5", placeholder: "Enter End Date", required: true, title: "Select start date first", disabled: true %>
   </div>
   <div class="form-group">
+      <div class="row-fluid pricing-table">
+        <div class="span3 plan">
+          <div class="plan-name">
+            <h2>Basic</h2>
+            <span>$10</span>
+          </div>
+          <ul>
+            <li class="plan-feature">1 GB RAM</li>
+            <li class="plan-feature">25 GB HD</li>
+            <li class="plan-feature">2 GHz Speed</li>
+            <li class="plan-feature">Unlimited upload</li>
+            <li class="plan-feature">Unlimited download</li>
+            <li class="plan-feature">24hrs support</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Select</a></li>
+          </ul>
+        </div>
+        <div class="span3 plan">
+          <div class="plan-name">
+            <h2>Pro</h2>
+            <span>$50</span>
+          </div>
+          <ul>
+            <li class="plan-feature">5 GB RAM</li>
+            <li class="plan-feature">125 GB HD</li>
+            <li class="plan-feature">4 GHz Speed</li>
+            <li class="plan-feature">Unlimited upload</li>
+            <li class="plan-feature">Unlimited download</li>
+            <li class="plan-feature">24hrs support</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Select</a></li>
+          </ul>
+        </div>
+        <div class="span3 plan">
+          <div class="plan-name">
+            <h2>Platinum</h2>
+            <span>$100</span>
+          </div>
+          <ul>
+            <li class="plan-feature">15 GB RAM</li>
+            <li class="plan-feature">250 GB HD</li>
+            <li class="plan-feature">6 GHz Speed</li>
+            <li class="plan-feature">Unlimited upload</li>
+            <li class="plan-feature">Unlimited download</li>
+            <li class="plan-feature">24hrs support</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Select</a></li>
+          </ul>
+        </div>
+        <div class="span3 plan">
+          <div class="plan-name">
+            <h2>Extreme</h2>
+            <span>$500</span>
+          </div>
+          <ul>
+            <li class="plan-feature">20 GB RAM</li>
+            <li class="plan-feature">500 GB HD</li>
+            <li class="plan-feature">10 GHz Speed</li>
+            <li class="plan-feature">Unlimited upload</li>
+            <li class="plan-feature">Unlimited download</li>
+            <li class="plan-feature">24hrs support</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-plan-select">Select</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
