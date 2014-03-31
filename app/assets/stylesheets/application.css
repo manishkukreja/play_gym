@@ -13,6 +13,7 @@
  *= require style.css
  *= require login.css
  *= require font-awesome.min.css
+ *= require pricing_table.css
  */
 .marketing{
     min-height:500px;
