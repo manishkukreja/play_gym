@@ -48,40 +48,44 @@
     <%= f.date_field :end_date, class: "form-control", id: "exampleInputEmail5", placeholder: "Enter End Date", required: true, title: "Select start date first", disabled: true %>
   </div>
     <div class="form-group">
-        <center><caption>You will get monthly activities on subscription</caption></center>
+        <caption><span style='float: left'>Charge: 2000</span><center>Following activities you will get:</center></caption>
         <table class="table table-striped">
             <thead>
-                <tr><th>Boxing</th>
-                <th>Climbing Wall</th>
-                <th>Football</th>
-                <th>Hopping Ball</th>
-                <th>Hula Hoops</th>
-                <th>Karate</th>
-                <tr></tr><th>Laser Tag</th>
-                <th>Ribbin Dance</th>
-                <th>Rope Bridge</th>
-                <th>Slackline</th>
-                <th>Tennis</th>
-                <th>Trampolin Jump</th>
+                <tr>
+                    <th>Boxing</th>
+                    <th>Climbing Wall</th>
+                    <th>Football</th>
+                    <th>Hopping Ball</th>
+                    <th>Hula Hoops</th>
+                    <th>Swings & Slides</th>
+                </tr>
+                <tr>
+                    <th>Tug of War</th>
+                    <th>Ribbin Dance</th>
+                    <th>Rope Bridge</th>
+                    <th>Slackline</th>
+                    <th>Ziplining</th>
+                    <th>Trampolin Jump</th>
+                </tr>
             </tr></thead>
         </table>
     </div>
     <div class="form-group">
         <table class="table table-striped">
             <thead>
-                <tr><th>Activity</th>
-                    <th>3 Per Week</th>
-                    <th>4 Per Week</th>
-                    <th>5 Per Week</th>
+                <tr><th>Add on Activities</th>
+                    <th>3 Visits Per Week</th>
+                    <th>4 Visits Per Week</th>
+                    <th>5 Visits Per Week</th>
                     <th>Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Football
-                    <td><input type="radio" name="football" value="2500">2500</td>
-                    <td><input type="radio" name="football" value="3000">3000</td>
-                    <td><input type="radio" name="football" value="3500">3500</td>
+                    <td><input type="radio" name="football" value="2500">500</td>
+                    <td><input type="radio" name="football" value="3000">1000</td>
+                    <td><input type="radio" name="football" value="3500">1500</td>
                     <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('');"><i class="fa fa-times-circle-o"></i></span></td>
                 </tr>
                 <tr>
