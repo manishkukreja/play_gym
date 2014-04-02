@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324034308) do
+ActiveRecord::Schema.define(version: 20140331100149) do
 
   create_table "activities", force: true do |t|
     t.string   "activity_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140324034308) do
     t.string   "video_path"
     t.string   "category_name"
     t.integer  "category_id"
+    t.integer  "charge"
   end
 
   create_table "activity_images", force: true do |t|
@@ -85,6 +86,17 @@ ActiveRecord::Schema.define(version: 20140324034308) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "member_activities", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "activity_id"
+    t.integer  "freq"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "member_activities", ["activity_id"], name: "index_member_activities_on_activity_id", using: :btree
+  add_index "member_activities", ["member_id"], name: "index_member_activities_on_member_id", using: :btree
 
   create_table "members", force: true do |t|
     t.string   "first_name"

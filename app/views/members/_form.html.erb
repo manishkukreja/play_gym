@@ -47,6 +47,25 @@
     <%= f.label "End Date", for: "exampleInputEmail5" %>
     <%= f.date_field :end_date, class: "form-control", id: "exampleInputEmail5", placeholder: "Enter End Date", required: true, title: "Select start date first", disabled: true %>
   </div>
+    <span id="charges_table_1" style="display:none;">
+        <div class="form-group">
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Activity</th><th>Charge</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Football</td><td>200</td></tr>
+                    <tr><td>Tennis</td><td>200</td></tr>
+                    <tr><td>Yoga</td><td>200</td></tr>
+                    <tr><td>Karate</td><td>200</td></tr>
+                    <tr><td>Gymnastics</td><td>200</td></tr>
+                    <tr><td>Art & Craft</td><td>200</td></tr>
+                    <tr><td>Water Play</td><td>200</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </span>
+    <span id="charges_table_2">
     <div class="form-group">
         <caption><span style='float: left'>Charge: 2000</span><center>Following activities you will get:</center></caption>
         <table class="table table-striped">
@@ -86,14 +105,14 @@
                     <td><input type="radio" name="football" value="500">500</td>
                     <td><input type="radio" name="football" value="1000">1000</td>
                     <td><input type="radio" name="football" value="1500">1500</td>
-                    <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('');"><i class="fa fa-times-circle-o"></i></span></td>
+                    <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
                 </tr>
                 <tr>
                     <td>Tennis
                     <td><input type="radio" name="tennis" value="500">500</td>
                     <td><input type="radio" name="tennis" value="1000">1000</td>
                     <td><input type="radio" name="tennis" value="1500">1500</td>
-                    <td id="tennis">0</td><td><span style='cursor:default' class='deselect_tennis' onclick="$('input[type=radio][name=tennis]:checked').attr('checked', false);$('#tennis').html('');"><i class="fa fa-times-circle-o"></i></span></td>
+                    <td id="tennis">0</td><td><span style='cursor:default' class='deselect_tennis' onclick="$('input[type=radio][name=tennis]:checked').attr('checked', false);$('#tennis').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
                 </tr>
                 <!--<tr>-->
                 <!--    <td>Yoga-->
@@ -143,6 +162,7 @@
             </tbody>
         </table>
     </div>
+    </span>
   <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
