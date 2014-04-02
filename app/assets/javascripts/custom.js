@@ -66,19 +66,19 @@
   function countDate(sape, date, type){
     var d = new Date(date);
     switch(type){
+      // case "2":
+      //   d.setDate(d.getDate() + 7);
+      //   break;
       case "2":
-        d.setDate(d.getDate() + 7);
-        break;
-      case "3":
         d.setMonth(d.getMonth() + 1);
         break;
-      case "4":
+      case "3":
         d.setMonth(d.getMonth() + 4);
         break;
-      case "5":
+      case "4":
         d.setMonth(d.getMonth() + 6);
         break;
-      case "6":
+      case "5":
         d.setFullYear(d.getFullYear() + 1);
         break;
     }
