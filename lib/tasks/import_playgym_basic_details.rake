@@ -39,12 +39,12 @@ namespace :initial_data do
 
 	task :membership_data => :environment do
 		Membership.delete_all
-		Membership.create(:membership_type => 'Pay As You Go' , :charge => 200)
-		# Membership.create(:membership_type => 'Weekly' , :charge => 1000)
-		Membership.create(:membership_type => 'Monthly' , :charge => 3000)
-		Membership.create(:membership_type => 'Quarterly' , :charge => 8000)
-		Membership.create(:membership_type => 'Half Yearly' , :charge => 15000)
-		Membership.create(:membership_type => 'Yearly' , :charge => 25000)
+		Membership.create(:membership_type => 'Pay As You Go' , :charge => 200, id: 1)
+		# Membership.create(:membership_type => 'Weekly' , :charge => 1000, id: 1)
+		Membership.create(:membership_type => 'Monthly' , :charge => 3000, id: 2)
+		Membership.create(:membership_type => 'Quarterly' , :charge => 8000, id: 3)
+		Membership.create(:membership_type => 'Half Yearly' , :charge => 15000, id: 4)
+		Membership.create(:membership_type => 'Yearly' , :charge => 25000, id: 5)
 	end
 
 	task :discount_data => :environment do
