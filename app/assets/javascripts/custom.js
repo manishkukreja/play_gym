@@ -97,6 +97,9 @@
     $('input[type=radio][name=tennis]').change(function(){
       $("#tennis").html($('input[type=radio][name=tennis]:checked').val());
     });
+    $('input[type=radio][name=archery]').change(function(){
+      $("#archery").html($('input[type=radio][name=archery]:checked').val());
+    });
     $('input[type=radio][name=yoga]').change(function(){
       $("#yoga").html($('input[type=radio][name=yoga]:checked').val());
     });

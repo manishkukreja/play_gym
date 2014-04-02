@@ -49,119 +49,163 @@
   </div>
     <span id="charges_table_1" style="display:none;">
         <div class="form-group">
+            <center><p class="bg-info" style="padding:10px;"><span style='float: left'><label><input type="checkbox" name="add_on_200[]" value="football"> Charge: 200 (per hour per week) </label></span>Following activities you will get:</p></center>
             <table class="table table-striped">
                 <thead>
-                    <tr><th>Activity</th><th>Charge</th></tr>
+                    <tr>
+                        <td>Boxing</td>
+                        <td>Climbing Wall</td>
+                        <td>Hopping Ball</td>
+                        <td>Hula Hoops</td>
+                        <td>Swings & Slides</td>
+                        <td>Tug of War</td>
+                    </tr>
+                    <tr>
+                        <td>Ribbin Dance</td>
+                        <td>Rope Bridge</td>
+                        <td>Slackline</td>
+                        <td>Ziplining</td>
+                        <td>Trampolin Jump</td>
+                        <td></td>
+                    </tr>
+                </tr></thead>
+            </table>
+        </div>
+        <div class="form-group">
+            <p class="bg-info" style="padding:10px;"><b>Choose Activities:</b></p>
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Activity</th><th>Charge (per hour per week)</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Football</td><td>200</td></tr>
-                    <tr><td>Tennis</td><td>200</td></tr>
-                    <tr><td>Yoga</td><td>200</td></tr>
-                    <tr><td>Karate</td><td>200</td></tr>
-                    <tr><td>Gymnastics</td><td>200</td></tr>
-                    <tr><td>Art & Craft</td><td>200</td></tr>
-                    <tr><td>Water Play</td><td>200</td></tr>
+                    <tr><td><div class="checkbox"><label>Football</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="football"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Tennis</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="tennis"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Yoga</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="yoga"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Karate</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="karate"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Gymnastics</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="gymnastics"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Art & Craft</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="art_craft"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Water Play</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="water_play"> 200</label></div></td></tr>
+                    <tr><td><div class="checkbox"><label>Archery</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="archery"> 200</label></div></td></tr>
                 </tbody>
             </table>
         </div>
+        <div class="form-group">
+            <p class="bg-success" style="padding:10px;"><b>Total: 500</b></p>
+        </div>
     </span>
     <span id="charges_table_2" style="display:none;">
-    <div class="form-group">
-        <caption><span style='float: left'>Charge: 2000</span><center>Following activities you will get:</center></caption>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Boxing</th>
-                    <th>Climbing Wall</th>
-                    <th>Football</th>
-                    <th>Hopping Ball</th>
-                    <th>Hula Hoops</th>
-                    <th>Swings & Slides</th>
-                </tr>
-                <tr>
-                    <th>Tug of War</th>
-                    <th>Ribbin Dance</th>
-                    <th>Rope Bridge</th>
-                    <th>Slackline</th>
-                    <th>Ziplining</th>
-                    <th>Trampolin Jump</th>
-                </tr>
-            </tr></thead>
-        </table>
-    </div>
-    <div class="form-group">
-        <table class="table table-striped">
-            <thead>
-                <tr><th>Add on Activities</th>
-                    <th>3 Visits Per Week</th>
-                    <th>4 Visits Per Week</th>
-                    <th>5 Visits Per Week</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Football
-                    <td><input type="radio" name="football" value="500">500</td>
-                    <td><input type="radio" name="football" value="1000">1000</td>
-                    <td><input type="radio" name="football" value="1500">1500</td>
-                    <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                </tr>
-                <tr>
-                    <td>Tennis
-                    <td><input type="radio" name="tennis" value="500">500</td>
-                    <td><input type="radio" name="tennis" value="1000">1000</td>
-                    <td><input type="radio" name="tennis" value="1500">1500</td>
-                    <td id="tennis">0</td><td><span style='cursor:default' class='deselect_tennis' onclick="$('input[type=radio][name=tennis]:checked').attr('checked', false);$('#tennis').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                </tr>
-                <!--<tr>-->
-                <!--    <td>Yoga-->
-                <!--    <td><input type="radio" name="yoga" value="400">400</td>-->
-                <!--    <td><input type="radio" name="yoga" value="800">800</td>-->
-                <!--    <td><input type="radio" name="yoga" value="1200">1200</td>-->
-                <!--    <td id="yoga">0</td><td><span style='cursor:default' class='deselect_yoga' onclick="$('input[type=radio][name=yoga]:checked').attr('checked', false);$('#yoga').html('');"><i class="fa fa-times-circle-o"></i></span></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>Karate-->
-                <!--    <td><input type="radio" name="karate" value="400">400</td>-->
-                <!--    <td><input type="radio" name="karate" value="800">800</td>-->
-                <!--    <td><input type="radio" name="karate" value="1200">1200</td>-->
-                <!--    <td id="karate">0</td><td><span style='cursor:default' class='deselect_karate' onclick="$('input[type=radio][name=karate]:checked').attr('checked', false);$('#karate').html('');"><i class="fa fa-times-circle-o"></i></span></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>Gymnastics-->
-                <!--    <td><input type="radio" name="gymnastics" value="750">750</td>-->
-                <!--    <td><input type="radio" name="gymnastics" value="1500">1500</td>-->
-                <!--    <td><input type="radio" name="gymnastics" value="2000">2000</td>-->
-                <!--    <td id="gymnastics">0</td>-->
-                <!--    <td><span style='cursor:default' class='deselect_gymnastics' onclick="$('input[type=radio][name=gymnastics]:checked').attr('checked', false);$('#gymnastics').html('');"><i class="fa fa-times-circle-o"></i></span></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>Art & Craft-->
-                <!--    <td><input type="radio" name="art_craft" value="500">500</td>-->
-                <!--    <td><input type="radio" name="art_craft" value="1000">1000</td>-->
-                <!--    <td><input type="radio" name="art_craft" value="1500">1500</td>-->
-                <!--    <td id="art_craft">0</td>-->
-                <!--    <td><span style='cursor:default' class='deselect_art_craft' onclick="$('input[type=radio][name=art_craft]:checked').attr('checked', false);$('#art_craft').html('');"><i class="fa fa-times-circle-o"></i></span></td>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                <!--    <td>Water Play-->
-                <!--    <td><input type="radio" name="water_play" value="500">500</td>-->
-                <!--    <td><input type="radio" name="water_play" value="1000">1000</td>-->
-                <!--    <td><input type="radio" name="water_play" value="1500">1500</td>-->
-                <!--    <td id="water_play">0</td>-->
-                <!--    <td><span style='cursor:default' class='deselect_water_play' onclick="$('input[type=radio][name=water_play]:checked').attr('checked', false);$('#water_play').html('');"><i class="fa fa-times-circle-o"></i></span></td>-->
-                <!--</tr>-->
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="form-group">
+            <center><p class="bg-info" style="padding:10px;"><span style='float: left'>Charge: 2000</span>Following activities you will get:</p></center>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Boxing</td>
+                        <td>Climbing Wall</td>
+                        <td>Hopping Ball</td>
+                        <td>Hula Hoops</td>
+                        <td>Swings & Slides</td>
+                        <td>Tug of War</td>
+                    </tr>
+                    <tr>
+                        <td>Ribbin Dance</td>
+                        <td>Rope Bridge</td>
+                        <td>Slackline</td>
+                        <td>Ziplining</td>
+                        <td>Trampolin Jump</td>
+                        <td></td>
+                    </tr>
+                </tr></thead>
+            </table>
+        </div>
+        <div class="form-group">
+            <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Activity</th>
+                        <th>3 Visits Per Week</th>
+                        <th>4 Visits Per Week</th>
+                        <th>5 Visits Per Week</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Football
+                        <td><input type="radio" name="football" value="500">500</td>
+                        <td><input type="radio" name="football" value="1000">1000</td>
+                        <td><input type="radio" name="football" value="1500">1500</td>
+                        <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tennis
+                        <td><input type="radio" name="tennis" value="500">500</td>
+                        <td><input type="radio" name="tennis" value="1000">1000</td>
+                        <td><input type="radio" name="tennis" value="1500">1500</td>
+                        <td id="tennis">0</td><td><span style='cursor:default' class='deselect_tennis' onclick="$('input[type=radio][name=tennis]:checked').attr('checked', false);$('#tennis').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Archery
+                        <td><input type="radio" name="archery" value="500">500</td>
+                        <td><input type="radio" name="archery" value="1000">1000</td>
+                        <td><input type="radio" name="archery" value="1500">1500</td>
+                        <td id="archery">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=archery]:checked').attr('checked', false);$('#archery').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <center><p class="bg-info" style="padding:10px;">Summer Activities</p></center>
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Add on Activities</th>
+                        <th>1 Visits Per Week</th>
+                        <th>2 Visits Per Week</th>
+                        <th>3 Visits Per Week</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Yoga
+                        <td><input type="radio" name="yoga" value="400">400</td>
+                        <td><input type="radio" name="yoga" value="800">800</td>
+                        <td><input type="radio" name="yoga" value="1200">1200</td>
+                        <td id="yoga">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=yoga]:checked').attr('checked', false);$('#yoga').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Karate
+                        <td><input type="radio" name="karate" value="400">400</td>
+                        <td><input type="radio" name="karate" value="800">800</td>
+                        <td><input type="radio" name="karate" value="1200">1200</td>
+                        <td id="karate">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=karate]:checked').attr('checked', false);$('#karate').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Gymnastics
+                        <td><input type="radio" name="gymnastics" value="750">750</td>
+                        <td><input type="radio" name="gymnastics" value="1500">1500</td>
+                        <td><input type="radio" name="gymnastics" value="2000">2000</td>
+                        <td id="gymnatics">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=gymnastics]:checked').attr('checked', false);$('#gymnatics').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Art & Craft
+                        <td><input type="radio" name="art_craft" value="500">500</td>
+                        <td><input type="radio" name="art_craft" value="1000">1000</td>
+                        <td><input type="radio" name="art_craft" value="1500">1500</td>
+                        <td id="art_craft">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=art_craft]:checked').attr('checked', false);$('#art_craft').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td>Water Play
+                        <td><input type="radio" name="water_play" value="500">500</td>
+                        <td><input type="radio" name="water_play" value="1000">1000</td>
+                        <td><input type="radio" name="water_play" value="1500">1500</td>
+                        <td id="water_play">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=water_play]:checked').attr('checked', false);$('#water_play').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <p class="bg-success" style="padding:10px;"><b>Total: 500</b></p>
+        </div>
     </span>
   <div class="form-group">
     <%= f.submit "Submit", class: "btn btn-primary" %>
