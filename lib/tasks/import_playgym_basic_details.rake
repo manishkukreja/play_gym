@@ -40,7 +40,7 @@ namespace :initial_data do
 	task :membership_data => :environment do
 		Membership.delete_all
 		Membership.create(:membership_type => 'Pay As You Go' , :charge => 200)
-		Membership.create(:membership_type => 'Weekly' , :charge => 1000)
+		# Membership.create(:membership_type => 'Weekly' , :charge => 1000)
 		Membership.create(:membership_type => 'Monthly' , :charge => 3000)
 		Membership.create(:membership_type => 'Quarterly' , :charge => 8000)
 		Membership.create(:membership_type => 'Half Yearly' , :charge => 15000)
