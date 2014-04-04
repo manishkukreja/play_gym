@@ -27,7 +27,8 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
-
+    @default_flat_200 = Activity.default_flat_200
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @member }

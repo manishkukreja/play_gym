@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331100149) do
+ActiveRecord::Schema.define(version: 20140404123039) do
 
   create_table "activities", force: true do |t|
     t.string   "activity_name"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20140331100149) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "charges", force: true do |t|
+    t.integer  "activity_id"
+    t.integer  "charge"
+    t.string   "freq_flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "charges", ["activity_id"], name: "index_charges_on_activity_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"

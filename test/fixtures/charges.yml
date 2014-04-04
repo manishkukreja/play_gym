@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity_id: 
+  charge: 1
+  freq_flag: MyString
+
+two:
+  activity_id: 
+  charge: 1
+  freq_flag: MyString
