@@ -4,14 +4,57 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Drop In Charges
+          Pay as you go
         </a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
-        Rs. 200/- per hour, Rs. 300/- per 2 hours for 1 child
-        Booklet of 10 unlimited visit tickets available at Rs. 2000/-
+        <div class="form-group">
+          <p class="bg-info" style="padding:10px;">Charge: 200 (per hour per week) </label>Following activities you will get:</p>
+          <table class="table table-striped">
+              <thead>
+                  <% @default_flat_200.each_with_index do |charge, index| %>
+                      <%= "<tr>".html_safe if index == 0 || index == 6 %>
+                      <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                      <% "</tr>".html_safe if index == 5 %>
+                  <% end %>
+              </thead>
+          </table>
+        </div>
+        <div class="form-group">
+          <p class="bg-info" style="padding:10px;">Activities (Charge per hour per week):</p>
+          <table class="table table-striped">
+              <tbody>
+                <tr>
+                <% @per_hr_200.each_with_index do |charge, index| %>
+                    <%= "<td><div class='checkbox'><label>#{charge.activity.activity_name}</label></div></td>".html_safe %>
+                <% end %>
+              </tbody>
+          </table>
+        </div>
+        <div class="form-group">
+          <p class="bg-info" style="padding:10px;">Add on activities</p>
+          <table class="table table-striped">
+              <thead>
+                  <tr><th>Activity</th>
+                      <th>3 Visits Per Week</th>
+                      <th>4 Visits Per Week</th>
+                      <th>5 Visits Per Week</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% (0..3).each do |i| %>
+                  <tr>
+                      <td><%= @summer_1_per_hr_per_week[i].activity.activity_name %>
+                      <%= "<td>#{@summer_1_per_hr_per_week[i].charge}</td>".html_safe %>
+                      <%= "<td>#{@summer_2_per_hr_per_week[i].charge}</td>".html_safe %>
+                      <%= "<td>#{@summer_3_per_hr_per_week[i].charge}</td>".html_safe %>
+                  </tr>
+                  <% end %>
+              </tbody>
+          </table>
+      </div>
       </div>
     </div>
   </div>
@@ -25,22 +68,194 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-        Rs 2500/- per month. This includes 3 unlimited visits per week to PlayGym.
-      </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;"><label style='float: left'>Charge: 2000 </label>Following activities you will get:</p></center>
+          <table class="table table-striped">
+              <thead>
+                  <% @default_flat_2000.each_with_index do |charge, index| %>
+                      <% if index == 0 || index == 5 %>
+                          <%= '<tr>'.html_safe %>
+                      <% end %>
+                      <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                      <%= "</tr>".html_safe if index == 4 || index == 9 %>
+                  <% end %>
+                  <%= "<td></td><td></td><td></td><td></td></tr>".html_safe %>
+              </tr></thead>
+          </table>
+        </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+          <table class="table table-striped">
+            <thead>
+                <tr><th>Activity</th>
+                    <th>3 Visits Per Week</th>
+                    <th>4 Visits Per Week</th>
+                    <th>5 Visits Per Week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% (0..2).each do |i| %>
+                <tr>
+                    <td><%= @member_3_per_week[i].activity.activity_name %>
+                    <%= "<td>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>      
     </div>
   </div>
   <div class="panel panel-default panel3">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Weekly Membership
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Quarterly
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-        Rs 1000/- per week. This includes 3 unlimited during the week to PlayGym.
-      </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;"><label style='float: left'>Charge: 1800 </label>Following activities you will get:</p></center>
+          <table class="table table-striped">
+              <thead>
+                  <% @default_flat_2000.each_with_index do |charge, index| %>
+                      <% if index == 0 || index == 5 %>
+                          <%= '<tr>'.html_safe %>
+                      <% end %>
+                      <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                      <%= "</tr>".html_safe if index == 4 || index == 9 %>
+                  <% end %>
+                  <%= "<td></td><td></td><td></td><td></td></tr>".html_safe %>
+              </tr></thead>
+          </table>
+        </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+          <table class="table table-striped">
+            <thead>
+                <tr><th>Activity</th>
+                    <th>3 Visits Per Week</th>
+                    <th>4 Visits Per Week</th>
+                    <th>5 Visits Per Week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% (0..2).each do |i| %>
+                <tr>
+                    <td><%= @member_3_per_week[i].activity.activity_name %>
+                    <%= "<td>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <div class="panel panel-default panel4">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Half Yearly
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;"><label style='float: left'>Charge: 1600 </label>Following activities you will get:</p></center>
+          <table class="table table-striped">
+              <thead>
+                  <% @default_flat_2000.each_with_index do |charge, index| %>
+                      <% if index == 0 || index == 5 %>
+                          <%= '<tr>'.html_safe %>
+                      <% end %>
+                      <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                      <%= "</tr>".html_safe if index == 4 || index == 9 %>
+                  <% end %>
+                  <%= "<td></td><td></td><td></td><td></td></tr>".html_safe %>
+              </tr></thead>
+          </table>
+        </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+          <table class="table table-striped">
+            <thead>
+                <tr><th>Activity</th>
+                    <th>3 Visits Per Week</th>
+                    <th>4 Visits Per Week</th>
+                    <th>5 Visits Per Week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% (0..2).each do |i| %>
+                <tr>
+                    <td><%= @member_3_per_week[i].activity.activity_name %>
+                    <%= "<td>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <div class="panel panel-default panel5">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          Yearly
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;"><label style='float: left'>Charge: 1400 </label>Following activities you will get:</p></center>
+          <table class="table table-striped">
+              <thead>
+                  <% @default_flat_2000.each_with_index do |charge, index| %>
+                      <% if index == 0 || index == 5 %>
+                          <%= '<tr>'.html_safe %>
+                      <% end %>
+                      <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                      <%= "</tr>".html_safe if index == 4 || index == 9 %>
+                  <% end %>
+                  <%= "<td></td><td></td><td></td><td></td></tr>".html_safe %>
+              </tr></thead>
+          </table>
+        </div>
+        <div class="form-group">
+          <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+          <table class="table table-striped">
+            <thead>
+                <tr><th>Activity</th>
+                    <th>3 Visits Per Week</th>
+                    <th>4 Visits Per Week</th>
+                    <th>5 Visits Per Week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% (0..2).each do |i| %>
+                <tr>
+                    <td><%= @member_3_per_week[i].activity.activity_name %>
+                    <%= "<td>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                    <%= "<td>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>      
     </div>
   </div>
 </div>

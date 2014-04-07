@@ -13,6 +13,7 @@
         $("#exampleInputEmail5").attr({"disabled":true});
         $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
       }
+      calculateTotal();
     });
 
     $("#exampleInputEmail4").change(function(){     
@@ -180,9 +181,21 @@
             total += parseInt($(this).attr('data-charge'));
         });
         $("#total_pay_as_you_go").text(total);
-      } else if(selected_radio == "2"){
-        if($("input[type=checkbox][name=default_flat_2000]").is(":checked"))
-          total += parseInt($("input[type=checkbox][name=default_flat_2000]").first().attr('data-charge'))
+      } else{
+        if($("input[type=checkbox][name=default_flat_2000]").is(":checked")){
+          discount = 0
+          if(selected_radio == "3")
+            discount = 10
+          else if(selected_radio == "4")
+            discount = 20
+          else if(selected_radio == "5")
+            discount = 30
+          if(discount != 0){
+            total += parseInt($("input[type=checkbox][name=default_flat_2000]").first().attr('data-charge')) - (parseInt($("input[type=checkbox][name=default_flat_2000]").first().attr('data-charge'))*discount)/100
+          } else {
+            total += parseInt($("input[type=checkbox][name=default_flat_2000]").first().attr('data-charge'))
+          }
+        }
         $("input[type=radio][name=member_12_0]").each(function(){
           if($(this).is(":checked"))
             total += parseInt($(this).attr('data-charge'));
