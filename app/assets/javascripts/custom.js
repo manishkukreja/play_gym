@@ -12,6 +12,22 @@
         $("#charges_table_2").show();
         $("#exampleInputEmail5").attr({"disabled":true});
         $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
+        if($(this).val()=="3"){
+          $("#membership_default_flat_txt").text("6000 (10% discount offer)");
+          $("#membership_default_flat_txt").parent().find("input").attr({"data-charge":6000})
+        }
+        else if($(this).val()=="4"){
+          $("#membership_default_flat_txt").text("12000 (20% discount offer)");
+          $("#membership_default_flat_txt").parent().find("input").attr({"data-charge":12000})
+        }
+        else if($(this).val()=="5"){
+          $("#membership_default_flat_txt").text("24000 (30% discount offer)");
+          $("#membership_default_flat_txt").parent().find("input").attr({"data-charge":24000})
+        }
+        else{
+          $("#membership_default_flat_txt").text("2000");
+          $("#membership_default_flat_txt").parent().find("input").attr({"data-charge":2000})
+        }
       }
       calculateTotal();
     });
