@@ -49,7 +49,7 @@
   </div>
     <span id="charges_table_1" style="display:none;">
         <div class="form-group">
-            <center><p class="bg-info" style="padding:10px;"><span style='float: left'><label><input type="checkbox" name="add_on_200[]" value="football"> Charge: 200 (per hour per week) </label></span>Following activities you will get:</p></center>
+            <center><p class="bg-info" style="padding:10px;"><span style='float: left'><label><input type="checkbox" name="default_flat_200" value="DEFAULT_FLAT_200" data-charge="200"> Charge: 200 (per hour per week) </label></span>Following activities you will get:</p></center>
             <table class="table table-striped">
                 <thead>
                     <% @default_flat_200.each_with_index do |charge, index| %>
@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     <% @per_hr_200.each_with_index do |charge, index| %>
-                        <%= "<tr><td><div class='checkbox'><label>#{charge.activity.activity_name}</label></div></td><td><div class='checkbox'><label><input type='checkbox' name='200_per_hr[]' value='#{charge.id}'>#{charge.charge}</label></div></td></tr>".html_safe %>
+                        <%= "<tr><td><div class='checkbox'><label>#{charge.activity.activity_name}</label></div></td><td><div class='checkbox'><label><input type='checkbox' name='per_hr_200' value='#{charge.id}' data-charge=#{charge.charge}>#{charge.charge}</label></div></td></tr>".html_safe %>
                     <% end %>
                 </tbody>
             </table>
@@ -89,23 +89,23 @@
                     <% (0..3).each do |i| %>
                     <tr>
                         <td><%= @summer_1_per_hr_per_week[i].activity.activity_name %>
-                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_1_per_hr_per_week[i].charge}'>#{@summer_1_per_hr_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_2_per_hr_per_week[i].charge}'>#{@summer_2_per_hr_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_3_per_hr_per_week[i].charge}'>#{@summer_3_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_1_per_hr_per_week[i].id}' data-charge='#{@summer_1_per_hr_per_week[i].charge}'>#{@summer_1_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_2_per_hr_per_week[i].id}' data-charge='#{@summer_2_per_hr_per_week[i].charge}'>#{@summer_2_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_3_per_hr_per_week[i].id}' data-charge='#{@summer_3_per_hr_per_week[i].charge}'>#{@summer_3_per_hr_per_week[i].charge}</td>".html_safe %>
                         <%= "<td id='total_#{@summer_1_per_hr_per_week[i].id}'>0</td>".html_safe %>
-                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=summer_<%=@summer_1_per_hr_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@summer_1_per_hr_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
+                        <td><span style='cursor:default' class='deselect_football' onclick='clearCharge("summer_<%=@summer_1_per_hr_per_week[i].activity.id%>_<%=i%>", "total_<%=@summer_1_per_hr_per_week[i].id%>")'><i class='fa fa-times-circle-o'></i></span></td>
                     </tr>
                     <% end %>
                 </tbody>
             </table>
         </div>
         <div class="form-group">
-            <p class="bg-success" style="padding:10px;"><b>Total: 500</b></p>
+            <p class="bg-success" style="padding:10px;"><b>Total: <span id="total_pay_as_you_go"> 0 </span></b></p>
         </div>
     </span>
     <span id="charges_table_2" style="display:none;">
         <div class="form-group">
-            <center><p class="bg-info" style="padding:10px;"><label style='float: left'><input type='checkbox' name='addon_membership_2000' value='membership_2000'> Charge: 2000 </label>Following activities you will get:</p></center>
+            <center><p class="bg-info" style="padding:10px;"><label style='float: left'><input type='checkbox' name='default_flat_2000' value="DEFAULT_FLAT_200" data-charge="2000"> Charge: 2000 </label>Following activities you will get:</p></center>
             <table class="table table-striped">
                 <thead>
                     <% @default_flat_2000.each_with_index do |charge, index| %>
@@ -134,11 +134,11 @@
                     <% (0..2).each do |i| %>
                     <tr>
                         <td><%= @member_3_per_week[i].activity.activity_name %>
-                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_3_per_week[i].charge}'>#{@member_3_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_4_per_week[i].charge}'>#{@member_4_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_5_per_week[i].charge}'>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_3_per_week[i].id}' data-charge='#{@member_3_per_week[i].charge}'>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_4_per_week[i].id}' data-charge='#{@member_4_per_week[i].charge}'>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_5_per_week[i].id}' data-charge='#{@member_5_per_week[i].charge}'>#{@member_5_per_week[i].charge}</td>".html_safe %>
                         <%= "<td id='total_#{@member_3_per_week[i].id}'>0</td>".html_safe %>
-                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=member_<%=@member_3_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@member_3_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
+                        <td><span style='cursor:default' class='deselect_football' onclick='clearCharge("member_<%=@member_3_per_week[i].activity.id%>_<%=i%>", "total_<%=@member_3_per_week[i].id%>")'><i class='fa fa-times-circle-o'></i></span></td>
                     </tr>
                     <% end %>
                 </tbody>
@@ -159,18 +159,19 @@
                     <% (0..4).each do |i| %>
                     <tr>
                         <td><%= @member_summer_1_per_week[i].activity.activity_name %>
-                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_1_per_week[i].charge}'>#{@member_summer_1_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_2_per_week[i].charge}'>#{@member_summer_2_per_week[i].charge}</td>".html_safe %>
-                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_3_per_week[i].charge}'>#{@member_summer_3_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_1_per_week[i].id}' data-charge='#{@member_summer_1_per_week[i].charge}'>#{@member_summer_1_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_2_per_week[i].id}' data-charge='#{@member_summer_2_per_week[i].charge}'>#{@member_summer_2_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_3_per_week[i].id}' data-charge='#{@member_summer_3_per_week[i].charge}'>#{@member_summer_3_per_week[i].charge}</td>".html_safe %>
                         <%= "<td id='total_#{@member_summer_1_per_week[i].id}'>0</td>".html_safe %>
-                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=member_summer_<%=@member_summer_1_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@member_summer_1_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
+                        <td><span style='cursor:default' class='deselect_football'
+                             onclick='clearCharge("member_summer_<%=@member_summer_1_per_week[i].activity.id%>_<%=i%>", "total_<%=@member_summer_1_per_week[i].id%>")'><i class='fa fa-times-circle-o'></i></span></td>
                     </tr>
                     <% end %>
                 </tbody>
             </table>
         </div>
         <div class="form-group">
-            <p class="bg-success" style="padding:10px;"><b>Total: 500</b></p>
+            <p class="bg-success" style="padding:10px;"><b>Total: <span id="total_membership"> 0 </span></b></p>
         </div>
     </span>
   <div class="form-group">
