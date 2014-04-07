@@ -92,17 +92,44 @@
 
   $(document).ready(function(){
     $('input[type=radio][name=summer_15_0]').change(function(){
-      $("#total_215").html($('input[type=radio][name=summer_15_0]:checked').val());
+      $("#total_21").html($('input[type=radio][name=summer_15_0]:checked').val());
     });
     $('input[type=radio][name=summer_16_1]').change(function(){
-      $("#total_216").html($('input[type=radio][name=summer_16_1]:checked').val());
+      $("#total_22").html($('input[type=radio][name=summer_16_1]:checked').val());
     });
     $('input[type=radio][name=summer_17_2]').change(function(){
-      $("#total_217").html($('input[type=radio][name=summer_17_2]:checked').val());
+      $("#total_23").html($('input[type=radio][name=summer_17_2]:checked').val());
     });
     $('input[type=radio][name=summer_18_3]').change(function(){
-      $("#total_218").html($('input[type=radio][name=summer_18_3]:checked').val());
+      $("#total_24").html($('input[type=radio][name=summer_18_3]:checked').val());
     });
+
+    $('input[type=radio][name=member_12_0]').change(function(){
+      $("#total_44").html($('input[type=radio][name=member_12_0]:checked').val());
+    });
+    $('input[type=radio][name=member_13_1]').change(function(){
+      $("#total_45").html($('input[type=radio][name=member_13_1]:checked').val());
+    });
+    $('input[type=radio][name=member_14_2]').change(function(){
+      $("#total_46").html($('input[type=radio][name=member_14_2]:checked').val());
+    });   
+  
+    $('input[type=radio][name=member_summer_15_0]').change(function(){
+      $("#total_53").html($('input[type=radio][name=member_summer_15_0]:checked').val());
+    });
+    $('input[type=radio][name=member_summer_16_1]').change(function(){
+      $("#total_54").html($('input[type=radio][name=member_summer_16_1]:checked').val());
+    });
+    $('input[type=radio][name=member_summer_17_2]').change(function(){
+      $("#total_55").html($('input[type=radio][name=member_summer_17_2]:checked').val());
+    });
+    $('input[type=radio][name=member_summer_18_3]').change(function(){
+      $("#total_56").html($('input[type=radio][name=member_summer_18_3]:checked').val());
+    });
+    $('input[type=radio][name=member_summer_19_4]').change(function(){
+      $("#total_57").html($('input[type=radio][name=member_summer_19_4]:checked').val());
+    });
+
     $('input[type=radio][name=karate]').change(function(){
       $("#karate").html($('input[type=radio][name=karate]:checked').val());
     });
