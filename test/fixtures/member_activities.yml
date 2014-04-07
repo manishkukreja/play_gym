@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: member_activities
+#
+#  id          :integer          not null, primary key
+#  member_id   :integer
+#  activity_id :integer
+#  freq        :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

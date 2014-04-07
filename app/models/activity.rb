@@ -12,6 +12,7 @@
 #  video_path    :string(255)
 #  category_name :string(255)
 #  category_id   :integer
+#  charge        :integer
 #
 
 class Activity < ActiveRecord::Base
@@ -28,15 +29,4 @@ class Activity < ActiveRecord::Base
   	scope :find_by_programs, lambda{where('category_id = ?',2)}
 	has_many :members
 	has_many :charges
-	
-	scope :default_flat_200, -> { includes(:charges).where("charges.freq_flag = 'DEFAULT_FLAT_200'").references(:charges) }
-	scope :default_flat_2000, -> { includes(:charges).where("charges.freq_flag = 'DEFAULT_FLAT_2000'").references(:charges) }
-	scope :per_hr_per_week, -> { includes(:charges).where("charges.freq_flag = 'PER_HR_PER_WEEK'").references(:charges) }
-	scope :summer_1_per_week, -> { includes(:charges).where("charges.freq_flag = 'SUMMER_1_PER_WEEK'").references(:charges) }
-	scope :summer_2_per_week, -> { includes(:charges).where("charges.freq_flag = 'SUMMER_1_PER_WEEK'").references(:charges) }
-	scope :summer_3_per_week, -> { includes(:charges).where("charges.freq_flag = 'SUMMER_1_PER_WEEK'").references(:charges) }
-	scope :member_1_per_week, -> { includes(:charges).where("charges.freq_flag = 'MEMBER_1_PER_WEEK'").references(:charges) }
-	scope :member_2_per_week, -> { includes(:charges).where("charges.freq_flag = 'MEMBER_2_PER_WEEK'").references(:charges) }
-	scope :member_3_per_week, -> { includes(:charges).where("charges.freq_flag = 'MEMBER_3_PER_WEEK'").references(:charges) }
-	scope :member_4_per_week, -> { includes(:charges).where("charges.freq_flag = 'MEMBER_4_PER_WEEK'").references(:charges) }
 end

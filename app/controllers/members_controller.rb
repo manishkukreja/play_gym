@@ -27,7 +27,11 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
-    @default_flat_200 = Activity.default_flat_200
+    @default_flat_200 = Charge.default_flat_200
+    @per_hr_200 = Charge.per_hr_200
+    @summer_1_per_hr_per_week = Charge.summer_1_per_hr_per_week
+    @summer_2_per_hr_per_week = Charge.summer_2_per_hr_per_week
+    @summer_3_per_hr_per_week = Charge.summer_3_per_hr_per_week
     
     respond_to do |format|
       format.html # new.html.erb

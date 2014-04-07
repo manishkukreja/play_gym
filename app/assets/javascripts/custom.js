@@ -91,17 +91,17 @@
   
 
   $(document).ready(function(){
-    $('input[type=radio][name=football]').change(function(){
-      $("#football").html($('input[type=radio][name=football]:checked').val());
+    $('input[type=radio][name=summer_15_0]').change(function(){
+      $("#total_215").html($('input[type=radio][name=summer_15_0]:checked').val());
     });
-    $('input[type=radio][name=tennis]').change(function(){
-      $("#tennis").html($('input[type=radio][name=tennis]:checked').val());
+    $('input[type=radio][name=summer_16_1]').change(function(){
+      $("#total_216").html($('input[type=radio][name=summer_16_1]:checked').val());
     });
-    $('input[type=radio][name=archery]').change(function(){
-      $("#archery").html($('input[type=radio][name=archery]:checked').val());
+    $('input[type=radio][name=summer_17_2]').change(function(){
+      $("#total_217").html($('input[type=radio][name=summer_17_2]:checked').val());
     });
-    $('input[type=radio][name=yoga]').change(function(){
-      $("#yoga").html($('input[type=radio][name=yoga]:checked').val());
+    $('input[type=radio][name=summer_18_3]').change(function(){
+      $("#total_218").html($('input[type=radio][name=summer_18_3]:checked').val());
     });
     $('input[type=radio][name=karate]').change(function(){
       $("#karate").html($('input[type=radio][name=karate]:checked').val());
