@@ -91,55 +91,151 @@
   
 
   $(document).ready(function(){
+    $("input[type=checkbox][name=default_flat_200],input[type=checkbox][name=default_flat_2000],input[type=checkbox][name=per_hr_200]").click(function(){
+      calculateTotal();
+    });
+    clearCharge = function(r_charge_nm, r_total_id){
+      $('input[type=radio][name='+r_charge_nm+']:checked').attr('checked', false);
+      $('#'+r_total_id).html('0');
+      calculateTotal();
+    }
     $('input[type=radio][name=summer_15_0]').change(function(){
-      $("#total_21").html($('input[type=radio][name=summer_15_0]:checked').val());
+      $("#total_21").html(parseInt($('input[type=radio][name=summer_15_0]:checked').attr('data-charge')));
+      calculateTotal();
     });
     $('input[type=radio][name=summer_16_1]').change(function(){
-      $("#total_22").html($('input[type=radio][name=summer_16_1]:checked').val());
+      $("#total_22").html($('input[type=radio][name=summer_16_1]:checked').attr('data-charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=summer_17_2]').change(function(){
-      $("#total_23").html($('input[type=radio][name=summer_17_2]:checked').val());
+      $("#total_23").html($('input[type=radio][name=summer_17_2]:checked').attr('data-charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=summer_18_3]').change(function(){
-      $("#total_24").html($('input[type=radio][name=summer_18_3]:checked').val());
+      $("#total_24").html($('input[type=radio][name=summer_18_3]:checked').attr('data-charge'));
+      calculateTotal();
     });
 
     $('input[type=radio][name=member_12_0]').change(function(){
-      $("#total_44").html($('input[type=radio][name=member_12_0]:checked').val());
+      $("#total_44").html($('input[type=radio][name=member_12_0]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_13_1]').change(function(){
-      $("#total_45").html($('input[type=radio][name=member_13_1]:checked').val());
+      $("#total_45").html($('input[type=radio][name=member_13_1]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_14_2]').change(function(){
-      $("#total_46").html($('input[type=radio][name=member_14_2]:checked').val());
+      $("#total_46").html($('input[type=radio][name=member_14_2]:checked').first().data('charge'));
+      calculateTotal();
     });   
   
     $('input[type=radio][name=member_summer_15_0]').change(function(){
-      $("#total_53").html($('input[type=radio][name=member_summer_15_0]:checked').val());
+      $("#total_53").html($('input[type=radio][name=member_summer_15_0]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_summer_16_1]').change(function(){
-      $("#total_54").html($('input[type=radio][name=member_summer_16_1]:checked').val());
+      $("#total_54").html($('input[type=radio][name=member_summer_16_1]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_summer_17_2]').change(function(){
-      $("#total_55").html($('input[type=radio][name=member_summer_17_2]:checked').val());
+      $("#total_55").html($('input[type=radio][name=member_summer_17_2]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_summer_18_3]').change(function(){
-      $("#total_56").html($('input[type=radio][name=member_summer_18_3]:checked').val());
+      $("#total_56").html($('input[type=radio][name=member_summer_18_3]:checked').first().data('charge'));
+      calculateTotal();
     });
     $('input[type=radio][name=member_summer_19_4]').change(function(){
-      $("#total_57").html($('input[type=radio][name=member_summer_19_4]:checked').val());
+      $("#total_57").html($('input[type=radio][name=member_summer_19_4]:checked').first().data('charge'));
+      calculateTotal();
     });
 
-    $('input[type=radio][name=karate]').change(function(){
-      $("#karate").html($('input[type=radio][name=karate]:checked').val());
-    });
-    $('input[type=radio][name=gymnastics]').change(function(){
-      $("#gymnatics").html($('input[type=radio][name=gymnastics]:checked').val());
-    });
-    $('input[type=radio][name=art_craft]').change(function(){
-      $("#art_craft").html($('input[type=radio][name=art_craft]:checked').val());
-    });
-    $('input[type=radio][name=water_play]').change(function(){
-      $("#water_play").html($('input[type=radio][name=water_play]:checked').val());
-    });
+    calculateTotal = function(){
+      var total = 0, selected_radio = 1;
+      $(".membership_type").each(function(){
+        if($(this).is(":checked"))
+          selected_radio = $(this).val();
+      });
+      if(selected_radio == "1"){
+        if($("input[type=checkbox][name=default_flat_200]").is(":checked"))
+          total += parseInt($("input[type=checkbox][name=default_flat_200]").first().attr('data-charge'))
+        $("input[type=checkbox][name=per_hr_200]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=summer_15_0]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=summer_16_1]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=summer_17_2]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=summer_18_3]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("#total_pay_as_you_go").text(total);
+      } else if(selected_radio == "2"){
+        if($("input[type=checkbox][name=default_flat_2000]").is(":checked"))
+          total += parseInt($("input[type=checkbox][name=default_flat_2000]").first().attr('data-charge'))
+        $("input[type=radio][name=member_12_0]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_13_1]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_14_2]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_15_0]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_16_1]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_17_2]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_18_3]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_19_4]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_summer_15_0]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_summer_16_1]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_summer_17_2]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_summer_18_3]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("input[type=radio][name=member_summer_19_4]").each(function(){
+          if($(this).is(":checked"))
+            total += parseInt($(this).attr('data-charge'));
+        });
+        $("#total_membership").text(total);
+      }
+    }
   });
