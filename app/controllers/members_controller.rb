@@ -27,6 +27,20 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
+    @default_flat_200 = Charge.default_flat_200
+    @per_hr_200 = Charge.per_hr_200
+    @summer_1_per_hr_per_week = Charge.summer_1_per_hr_per_week
+    @summer_2_per_hr_per_week = Charge.summer_2_per_hr_per_week
+    @summer_3_per_hr_per_week = Charge.summer_3_per_hr_per_week
+
+    @default_flat_2000 = Charge.default_flat_2000
+    @member_3_per_week = Charge.member_3_per_week
+    @member_4_per_week = Charge.member_4_per_week
+    @member_5_per_week = Charge.member_5_per_week
+
+    @member_summer_1_per_week = Charge.member_summer_1_per_week
+    @member_summer_2_per_week = Charge.member_summer_2_per_week
+    @member_summer_3_per_week = Charge.member_summer_3_per_week
 
     respond_to do |format|
       format.html # new.html.erb

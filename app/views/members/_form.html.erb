@@ -52,23 +52,12 @@
             <center><p class="bg-info" style="padding:10px;"><span style='float: left'><label><input type="checkbox" name="add_on_200[]" value="football"> Charge: 200 (per hour per week) </label></span>Following activities you will get:</p></center>
             <table class="table table-striped">
                 <thead>
-                    <tr>
-                        <td>Boxing</td>
-                        <td>Climbing Wall</td>
-                        <td>Hopping Ball</td>
-                        <td>Hula Hoops</td>
-                        <td>Swings & Slides</td>
-                        <td>Tug of War</td>
-                    </tr>
-                    <tr>
-                        <td>Ribbin Dance</td>
-                        <td>Rope Bridge</td>
-                        <td>Slackline</td>
-                        <td>Ziplining</td>
-                        <td>Trampolin Jump</td>
-                        <td></td>
-                    </tr>
-                </tr></thead>
+                    <% @default_flat_200.each_with_index do |charge, index| %>
+                        <%= "<tr>".html_safe if index == 0 || index == 6 %>
+                        <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                        <% "</tr>".html_safe if index == 5 %>
+                    <% end %>
+                </thead>
             </table>
         </div>
         <div class="form-group">
@@ -78,14 +67,35 @@
                     <tr><th>Activity</th><th>Charge (per hour per week)</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><div class="checkbox"><label>Football</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="football"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Tennis</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="tennis"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Yoga</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="yoga"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Karate</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="karate"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Gymnastics</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="gymnastics"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Art & Craft</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="art_craft"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Water Play</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="water_play"> 200</label></div></td></tr>
-                    <tr><td><div class="checkbox"><label>Archery</label></div></td><td><div class="checkbox"><label><input type="checkbox" name="add_on_200[]" value="archery"> 200</label></div></td></tr>
+                    <% @per_hr_200.each_with_index do |charge, index| %>
+                        <%= "<tr><td><div class='checkbox'><label>#{charge.activity.activity_name}</label></div></td><td><div class='checkbox'><label><input type='checkbox' name='200_per_hr[]' value='#{charge.id}'>#{charge.charge}</label></div></td></tr>".html_safe %>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <center><p class="bg-info" style="padding:10px;">Add on activities</p></center>
+            <table class="table table-striped">
+                <thead>
+                    <tr><th>Activity</th>
+                        <th>3 Visits Per Week</th>
+                        <th>4 Visits Per Week</th>
+                        <th>5 Visits Per Week</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% (0..3).each do |i| %>
+                    <tr>
+                        <td><%= @summer_1_per_hr_per_week[i].activity.activity_name %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_1_per_hr_per_week[i].charge}'>#{@summer_1_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_2_per_hr_per_week[i].charge}'>#{@summer_2_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='summer_#{@summer_1_per_hr_per_week[i].activity.id}_#{i}' value='#{@summer_3_per_hr_per_week[i].charge}'>#{@summer_3_per_hr_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td id='total_#{@summer_1_per_hr_per_week[i].id}'>0</td>".html_safe %>
+                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=summer_<%=@summer_1_per_hr_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@summer_1_per_hr_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
+                    </tr>
+                    <% end %>
                 </tbody>
             </table>
         </div>
@@ -95,25 +105,17 @@
     </span>
     <span id="charges_table_2" style="display:none;">
         <div class="form-group">
-            <center><p class="bg-info" style="padding:10px;"><span style='float: left'><input type='checkbox' name='addon_membership_2000' value='membership_2000'> Charge: 2000 </span>Following activities you will get:</p></center>
+            <center><p class="bg-info" style="padding:10px;"><label style='float: left'><input type='checkbox' name='addon_membership_2000' value='membership_2000'> Charge: 2000 </label>Following activities you will get:</p></center>
             <table class="table table-striped">
                 <thead>
-                    <tr>
-                        <td>Boxing</td>
-                        <td>Climbing Wall</td>
-                        <td>Hopping Ball</td>
-                        <td>Hula Hoops</td>
-                        <td>Swings & Slides</td>
-                        <td>Tug of War</td>
-                    </tr>
-                    <tr>
-                        <td>Ribbin Dance</td>
-                        <td>Rope Bridge</td>
-                        <td>Slackline</td>
-                        <td>Ziplining</td>
-                        <td>Trampolin Jump</td>
-                        <td></td>
-                    </tr>
+                    <% @default_flat_2000.each_with_index do |charge, index| %>
+                        <% if index == 0 || index == 5 %>
+                            <%= '<tr>'.html_safe %>
+                        <% end %>
+                        <%= "<td>#{charge.activity.activity_name}</td>".html_safe %>
+                        <%= "</tr>".html_safe if index == 4 || index == 9 %>
+                    <% end %>
+                    <%= "<td></td><td></td><td></td><td></td></tr>".html_safe %>
                 </tr></thead>
             </table>
         </div>
@@ -129,27 +131,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% (0..2).each do |i| %>
                     <tr>
-                        <td>Football
-                        <td><input type="radio" name="football" value="500">500</td>
-                        <td><input type="radio" name="football" value="1000">1000</td>
-                        <td><input type="radio" name="football" value="1500">1500</td>
-                        <td id="football">0</td><td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=football]:checked').attr('checked', false);$('#football').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                        <td><%= @member_3_per_week[i].activity.activity_name %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_3_per_week[i].charge}'>#{@member_3_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_4_per_week[i].charge}'>#{@member_4_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_#{@member_3_per_week[i].activity.id}_#{i}' value='#{@member_5_per_week[i].charge}'>#{@member_5_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td id='total_#{@member_3_per_week[i].id}'>0</td>".html_safe %>
+                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=member_<%=@member_3_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@member_3_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
                     </tr>
-                    <tr>
-                        <td>Tennis
-                        <td><input type="radio" name="tennis" value="500">500</td>
-                        <td><input type="radio" name="tennis" value="1000">1000</td>
-                        <td><input type="radio" name="tennis" value="1500">1500</td>
-                        <td id="tennis">0</td><td><span style='cursor:default' class='deselect_tennis' onclick="$('input[type=radio][name=tennis]:checked').attr('checked', false);$('#tennis').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
-                    <tr>
-                        <td>Archery
-                        <td><input type="radio" name="archery" value="500">500</td>
-                        <td><input type="radio" name="archery" value="1000">1000</td>
-                        <td><input type="radio" name="archery" value="1500">1500</td>
-                        <td id="archery">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=archery]:checked').attr('checked', false);$('#archery').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
+                    <% end %>
                 </tbody>
             </table>
         </div>
@@ -165,41 +156,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% (0..4).each do |i| %>
                     <tr>
-                        <td>Yoga
-                        <td><input type="radio" name="yoga" value="400">400</td>
-                        <td><input type="radio" name="yoga" value="800">800</td>
-                        <td><input type="radio" name="yoga" value="1200">1200</td>
-                        <td id="yoga">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=yoga]:checked').attr('checked', false);$('#yoga').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
+                        <td><%= @member_summer_1_per_week[i].activity.activity_name %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_1_per_week[i].charge}'>#{@member_summer_1_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_2_per_week[i].charge}'>#{@member_summer_2_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td><input type='radio' name='member_summer_#{@member_summer_1_per_week[i].activity.id}_#{i}' value='#{@member_summer_3_per_week[i].charge}'>#{@member_summer_3_per_week[i].charge}</td>".html_safe %>
+                        <%= "<td id='total_#{@member_summer_1_per_week[i].id}'>0</td>".html_safe %>
+                        <td><span style='cursor:default' class='deselect_football' onclick="$('input[type=radio][name=member_summer_<%=@member_summer_1_per_week[i].activity.id%>_<%=i%>]:checked').attr('checked', false);$('#total_<%=@member_summer_1_per_week[i].id%>').html('0');"><i class='fa fa-times-circle-o'></i></span></td>
                     </tr>
-                    <tr>
-                        <td>Karate
-                        <td><input type="radio" name="karate" value="400">400</td>
-                        <td><input type="radio" name="karate" value="800">800</td>
-                        <td><input type="radio" name="karate" value="1200">1200</td>
-                        <td id="karate">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=karate]:checked').attr('checked', false);$('#karate').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
-                    <tr>
-                        <td>Gymnastics
-                        <td><input type="radio" name="gymnastics" value="750">750</td>
-                        <td><input type="radio" name="gymnastics" value="1500">1500</td>
-                        <td><input type="radio" name="gymnastics" value="2000">2000</td>
-                        <td id="gymnatics">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=gymnastics]:checked').attr('checked', false);$('#gymnatics').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
-                    <tr>
-                        <td>Art & Craft
-                        <td><input type="radio" name="art_craft" value="500">500</td>
-                        <td><input type="radio" name="art_craft" value="1000">1000</td>
-                        <td><input type="radio" name="art_craft" value="1500">1500</td>
-                        <td id="art_craft">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=art_craft]:checked').attr('checked', false);$('#art_craft').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
-                    <tr>
-                        <td>Water Play
-                        <td><input type="radio" name="water_play" value="500">500</td>
-                        <td><input type="radio" name="water_play" value="1000">1000</td>
-                        <td><input type="radio" name="water_play" value="1500">1500</td>
-                        <td id="water_play">0</td><td><span style='cursor:default' class='deselect_archery' onclick="$('input[type=radio][name=water_play]:checked').attr('checked', false);$('#water_play').html('0');"><i class="fa fa-times-circle-o"></i></span></td>
-                    </tr>
+                    <% end %>
                 </tbody>
             </table>
         </div>
