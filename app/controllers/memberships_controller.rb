@@ -1,5 +1,5 @@
 class MembershipsController < ApplicationController
-  before_filter :user_logged_in?, except: [:index, :show]
+  before_filter :user_logged_in?, except: [:index, :show, :summer_camps]
   before_filter :user_admin? , only: [:create,:update,:edit,:destroy]
 
 	def index
@@ -91,4 +91,7 @@ class MembershipsController < ApplicationController
     end
   end
 
+  def summer_camps
+
+  end
 end
