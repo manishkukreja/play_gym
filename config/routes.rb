@@ -34,7 +34,8 @@ Playgym::Application.routes.draw do
 	resources :activity_skills
 	resources :skills
   	resources :memberships
-
+	get 'summer_camps' => 'memberships#summer_camps'
+	
 	resources :home do
 		collection do
 			get "invite_friends"
