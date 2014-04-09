@@ -17,4 +17,5 @@
 //= require docs.min.js
 //= require underscore-min.js
 //= require gmaps_google.js
+//= require MetroJs.js
 //= require custom.js
