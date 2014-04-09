@@ -34,7 +34,9 @@
 
     $("#exampleInputEmail4").change(function(){     
       $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
-    });            
+    });
+    
+    $(".live-tile").liveTile();
   });
 
   function checkForm(start_date, end_date)
