@@ -4,11 +4,11 @@
 {
 	color:#fff;
 	float:left;
-	height: 180px;
+	height: 250px;
 	margin:15px;
 	overflow:hidden;
 	position:relative;
-	width: 180px;
+	width: 250px;
 }
 .live-tile.two-wide, .list-tile.two-wide { width:390px; }
 .live-tile.two-tall, .list-tile.two-tall { height:390px; }
@@ -604,7 +604,7 @@ img.full , a.full
 	font-weight: bold;
 	font-size: 25px;
 	line-height: 35px;
-	padding: 10px;
+	padding: 70px 10px 10px 10px;
 	text-align: center;
 }
 
@@ -612,6 +612,6 @@ img.full , a.full
 	font-weight: bold;
 	font-size: 15px;
 	line-height: 25px;
-	padding: 5px;
+	padding: 50px 5px 5px 5px;
 	text-align: center;	
 }
