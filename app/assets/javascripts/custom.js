@@ -269,4 +269,8 @@
         $("#total_membership").text(total);
       }
     }
+
+    saveMember = function(){
+      alert(100);
+    }    
   });
