@@ -43,7 +43,7 @@
   {
     d1 = new Date($(start_date).val());
     d2 = new Date($(end_date).val());
-    
+    $("#date_validate").val(false);
     if(d1 == 'Invalid Date') {
       alert("Invalid start date");
       $(start_date).focus();
@@ -71,6 +71,7 @@
       return false;
     }
     $("#exampleInputEmail5").removeAttr("disabled");
+    $("#date_validate").val(true);
     return true;
   }
 

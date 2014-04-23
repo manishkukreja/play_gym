@@ -56,18 +56,33 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(as_params(params))
-    @member.status = true
-    respond_to do |format|
+    if params[:date_validate] == "false"
+      @flash = { status: :none }
+    else
+      @member = Member.new(as_params(params))
+      @member.status = true
+      _charge_ids = []
+      if [2,3,4,5].include?(params[:member][:membership_type].to_i)
+        if params[:default_flat_2000].present? && params[:default_flat_2000] == "DEFAULT_FLAT_2000"
+          _charge_ids = _charge_ids + Charge.where("freq_flag = 'DEFAULT_FLAT_2000'").collect(&:id)
+        end
+        Charge.where(freq_flag: ["MEMBER_3_PER_WEK","MEMBER_4_PER_WEK","MEMBER_5_PER_WEK"]).each_with_index do |charge, index|
+          _charge_ids << params["member_#{charge.activity.id}_#{index}"] if params.has_key?("member_#{charge.activity.id}_#{index}")
+        end
+        Charge.where(freq_flag: ["MEMBER_SUMMER_1_PER_WEEK","MEMBER_SUMMER_2_PER_WEEK","MEMBER_SUMMER_3_PER_WEEK"]).each_with_index do |charge, index|
+          _charge_ids << params["member_summer_#{charge.activity.id}_#{index}"] if params.has_key?("member_summer_#{charge.activity.id}_#{index}")
+        end
+        @member.charge_ids = _charge_ids
+      end
       if @member.save
         UserMailer.invitation(@member).deliver
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render json: @member, status: :created, location: @member }
+        @flash = { status: :success, message: 'Member is successfully created.' }
       else
-        format.html { render action: "new" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        @flash = { status: :warning, message: @member.errors.full_messages.join(',') }
       end
     end
+  rescue Exception => e
+    @flash = { status: :danger, message: e.message }
   end
 
   # # PUT /members/1

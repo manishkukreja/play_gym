@@ -27,5 +27,7 @@ class Charge < ActiveRecord::Base
 	scope :member_summer_1_per_week, -> { where("freq_flag = 'MEMBER_SUMMER_1_PER_WEEK'") }
 	scope :member_summer_2_per_week, -> { where("freq_flag = 'MEMBER_SUMMER_2_PER_WEEK'") }
 	scope :member_summer_3_per_week, -> { where("freq_flag = 'MEMBER_SUMMER_3_PER_WEEK'") }
-  
+  	
+  	has_many :member_charges, dependent: :destroy
+  	has_many :members, through: :member_charges
 end
