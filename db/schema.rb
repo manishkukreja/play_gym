@@ -97,16 +97,16 @@ ActiveRecord::Schema.define(version: 20140404123039) do
     t.datetime "updated_at"
   end
 
-  create_table "member_activities", force: true do |t|
+  create_table "member_charges", force: true do |t|
     t.integer  "member_id"
-    t.integer  "activity_id"
+    t.integer  "charge_id"
     t.integer  "freq"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "member_activities", ["activity_id"], name: "index_member_activities_on_activity_id", using: :btree
-  add_index "member_activities", ["member_id"], name: "index_member_activities_on_member_id", using: :btree
+  add_index "member_charges", ["charge_id"], name: "index_member_charges_on_charge_id", using: :btree
+  add_index "member_charges", ["member_id"], name: "index_member_charges_on_member_id", using: :btree
 
   create_table "members", force: true do |t|
     t.string   "first_name"

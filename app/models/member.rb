@@ -18,16 +18,8 @@
 #
 
 class Member < ActiveRecord::Base
-  # attr_accessible :email, :end_date, :first_name, :last_name, :membership_type, :start_date
   has_one :membership
-
-  # def find_birthday
-  	
-  # end
-
-  # def find_last_day
-  	
-  # end
-
-  
+  validates_uniqueness_of :email
+  has_many :member_charges, dependent: :destroy
+  has_many :charges, through: :member_charges  
 end
