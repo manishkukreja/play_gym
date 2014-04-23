@@ -1,0 +1,60 @@
+<article class="module width_3_quarter">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+<p>
+  <b>Membership type:</b>
+  <%= @member.membership.membership_type rescue '' %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @member.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @member.end_date %>
+</p>
+
+<p><strong>Activities</strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Charge</th>
+        <th>Freq Flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @member.charges.each do |charge| %>
+        <tr><td><%= charge.activity.activity_name rescue "" %>
+          <% if charge.freq_flag == "DEFAULT_FLAT_2000" %>
+          <td><%= "FLAT_2000" %>
+          <% elsif charge.freq_flag == "DEFAULT_FLAT_200" %>
+          <% else %>
+          <td><%= charge.charge rescue "" %>
+          <% end %>
+          <td><%= charge.freq_flag rescue "" %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<%= link_to 'Back', admin_members_path %>
+</article>

@@ -37,7 +37,7 @@
   <div class="form-group">
     <%= f.label "Membership Type" %>
     <% for membership in Membership.all %>
-      <%= f.radio_button('membership_type',membership.id, class: "membership_type", required: true) %><%= membership.membership_type %>
+      <%= f.radio_button('membership_id', membership.id, class: "membership_type", required: true) %><%= membership.membership_type %>
     <%end%>
   </div>
   <div class="form-group">

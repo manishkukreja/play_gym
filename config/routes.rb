@@ -13,7 +13,7 @@ Playgym::Application.routes.draw do
 	
 	namespace :admin do
 		get "/dashboard" => "dashboard#index"
-		resources :members do
+		resources :members, only: [:index, :show] do
 			post "send_birthday_mail" => "members#send_birthday_mail"
 			post "send_last_day_reminder_mail" => "members#send_last_day_reminder_mail"
 			post "expire", on: :collection

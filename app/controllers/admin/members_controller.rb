@@ -26,4 +26,8 @@ class Admin::MembersController < Admin::AdminController
   	UserMailer.last_day_reminder(@member).deliver if @member.present?
   end
 
+  def show
+    @member = Member.find(params[:id])
+  end
+
 end

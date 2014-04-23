@@ -1,5 +1,5 @@
 	$(document).ready(function(){
-    $(".membership_type").change(function(){
+    $(".membership_id").change(function(){
       $("#exampleInputEmail4").removeAttr("disabled");
       $("#exampleInputEmail4").removeAttr("title");
       if($(this).val()=="1"){
@@ -11,7 +11,7 @@
         $("#charges_table_1").hide();
         $("#charges_table_2").show();
         $("#exampleInputEmail5").attr({"disabled":true});
-        $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
+        $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_id]']:checked").val()));
         if($(this).val()=="3"){
           $("#membership_default_flat_txt").text("6000 (10% discount offer)");
           $("#membership_default_flat_txt").parent().find("input").attr({"data-charge":6000})
@@ -33,7 +33,7 @@
     });
 
     $("#exampleInputEmail4").change(function(){     
-      $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_type]']:checked").val()));
+      $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_id]']:checked").val()));
     });
     
     $(".live-tile").liveTile();

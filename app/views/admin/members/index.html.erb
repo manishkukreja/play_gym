@@ -46,7 +46,7 @@
             <tr class="danger">
             <% else %><tr><% end %>
                 <th><input type="checkbox" name="member_ids[]" class="member_ids" value="<%= member.id %>"></th>
-		            <td><%= member.id %></td>
+		            <td><%= link_to member.id, admin_member_path(member) %></td>
 		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
 		            <td><%= "#{member.email}" rescue "" %></td>
 		            <td><%= "#{member.membership_type}" rescue "" %></td>
