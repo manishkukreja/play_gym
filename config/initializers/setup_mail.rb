@@ -6,3 +6,4 @@ ActionMailer::Base.smtp_settings = {
   :password             => "PlayGym2013",
   :authentication       => "plain",
   :enable_starttls_auto => true
+}
