@@ -66,7 +66,7 @@ class MembersController < ApplicationController
         if params[:default_flat_2000].present? && params[:default_flat_2000] == "DEFAULT_FLAT_2000"
           _charge_ids = _charge_ids + Charge.where("freq_flag = 'DEFAULT_FLAT_2000'").collect(&:id)
         end
-        Charge.where(freq_flag: ["MEMBER_3_PER_WEK","MEMBER_4_PER_WEK","MEMBER_5_PER_WEK"]).each_with_index do |charge, index|
+        Charge.where(freq_flag: ["MEMBER_3_PER_WEEK","MEMBER_4_PER_WEEK","MEMBER_5_PER_WEEK"]).each_with_index do |charge, index|
           _charge_ids << params["member_#{charge.activity.id}_#{index}"] if params.has_key?("member_#{charge.activity.id}_#{index}")
         end
         Charge.where(freq_flag: ["MEMBER_SUMMER_1_PER_WEEK","MEMBER_SUMMER_2_PER_WEEK","MEMBER_SUMMER_3_PER_WEEK"]).each_with_index do |charge, index|

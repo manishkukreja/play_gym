@@ -13,5 +13,5 @@ class Membership < ActiveRecord::Base
   # attr_accessible :charge, :membership_type
   belongs_to :activity
   has_many :discounts
-  belongs_to :member
+  has_one :member
 end

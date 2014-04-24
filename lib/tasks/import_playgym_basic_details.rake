@@ -80,17 +80,17 @@ namespace :initial_data do
 		Charge.create(id: 42, activity_id: 10, charge: 2000, freq_flag: 'DEFAULT_FLAT_2000')
 		Charge.create(id: 43, activity_id: 11, charge: 2000, freq_flag: 'DEFAULT_FLAT_2000')
 
-		Charge.create(id: 44, activity_id: 12, charge: 2500, freq_flag: 'MEMBER_3_PER_WEK')
-		Charge.create(id: 45, activity_id: 13, charge: 2500, freq_flag: 'MEMBER_3_PER_WEK')
-		Charge.create(id: 46, activity_id: 14, charge: 2500, freq_flag: 'MEMBER_3_PER_WEK')
+		Charge.create(id: 44, activity_id: 12, charge: 2500, freq_flag: 'MEMBER_3_PER_WEEK')
+		Charge.create(id: 45, activity_id: 13, charge: 2500, freq_flag: 'MEMBER_3_PER_WEEK')
+		Charge.create(id: 46, activity_id: 14, charge: 2500, freq_flag: 'MEMBER_3_PER_WEEK')
 
-		Charge.create(id: 47, activity_id: 12, charge: 3000, freq_flag: 'MEMBER_4_PER_WEK')
-		Charge.create(id: 48, activity_id: 13, charge: 3000, freq_flag: 'MEMBER_4_PER_WEK')
-		Charge.create(id: 49, activity_id: 14, charge: 3000, freq_flag: 'MEMBER_4_PER_WEK')
+		Charge.create(id: 47, activity_id: 12, charge: 3000, freq_flag: 'MEMBER_4_PER_WEEK')
+		Charge.create(id: 48, activity_id: 13, charge: 3000, freq_flag: 'MEMBER_4_PER_WEEK')
+		Charge.create(id: 49, activity_id: 14, charge: 3000, freq_flag: 'MEMBER_4_PER_WEEK')
 
-		Charge.create(id: 50, activity_id: 12, charge: 3500, freq_flag: 'MEMBER_5_PER_WEK')
-		Charge.create(id: 51, activity_id: 13, charge: 3500, freq_flag: 'MEMBER_5_PER_WEK')
-		Charge.create(id: 52, activity_id: 14, charge: 3500, freq_flag: 'MEMBER_5_PER_WEK')
+		Charge.create(id: 50, activity_id: 12, charge: 3500, freq_flag: 'MEMBER_5_PER_WEEK')
+		Charge.create(id: 51, activity_id: 13, charge: 3500, freq_flag: 'MEMBER_5_PER_WEEK')
+		Charge.create(id: 52, activity_id: 14, charge: 3500, freq_flag: 'MEMBER_5_PER_WEEK')
 
 		Charge.create(id: 53, activity_id: 15, charge: 400, freq_flag: 'MEMBER_SUMMER_1_PER_WEEK')
 		Charge.create(id: 54, activity_id: 16, charge: 400, freq_flag: 'MEMBER_SUMMER_1_PER_WEEK')

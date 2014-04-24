@@ -26,4 +26,18 @@ class Admin::MembersController < Admin::AdminController
   	UserMailer.last_day_reminder(@member).deliver if @member.present?
   end
 
+  def show
+    @member = Member.find(params[:id])
+  end
+
+  def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+
+    respond_to do |format|
+      format.html { redirect_to admin_members_url }
+      format.json { head :no_content }
+    end
+  end
+
 end

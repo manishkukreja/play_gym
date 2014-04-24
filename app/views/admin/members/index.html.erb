@@ -2,7 +2,7 @@
 	<%= "Members" %>
 <% end %>
 
-<article class="module width_3_quarter">
+<article class="module width_4_quarter">
 	<table>
 	<tr><td><div class="success" style="height:20px;width:20px;"></div><td>Birthday User
 	<td><div class="danger" style="height:20px;width:20px;"></div><td>Expire User
@@ -11,7 +11,7 @@
 	</table>
 </article>
 
-<article class="module width_3_quarter">
+<article class="module width_4_quarter">
     <header><h3 class="tabs_involved">List of All Members <img src='/assets/throbber.svg' id="img_loader" style="visibility:hidden;"></h3>
     <ul class="tabs">
         <li><a href="#tab1">All</a></li>
@@ -34,6 +34,7 @@
 	            <th>End Date</th> 
 	            <th>DOB</th>
 	            <th>Status</th>
+	            <th>Action</th>
 	        </tr> 
 	      </thead> 
 	      <tbody>
@@ -49,11 +50,12 @@
 		            <td><%= member.id %></td>
 		            <td><%= "#{member.first_name} #{member.last_name}" rescue "" %></td>
 		            <td><%= "#{member.email}" rescue "" %></td>
-		            <td><%= "#{member.membership_type}" rescue "" %></td>
+		            <td><%= "#{member.membership.membership_type}" rescue "" %></td>
 		            <td><%= "#{member.start_date.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.end_date.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.dob.strftime("%d-%b %Y")}" rescue "" %></td>
 		            <td><%= "#{member.status}" rescue "" %></td>
+		            <td><%= link_to "Delete", admin_member_path(member), method: :delete, confirm: "Do you want to delete?" rescue "" %> | <%= link_to "Detail", admin_member_path(member) rescue "" %></td>
 		        </tr>
 	        <% end %>
 	      </tbody>
