@@ -20,9 +20,9 @@ class Charge < ActiveRecord::Base
 	scope :summer_3_per_hr_per_week, -> { where("freq_flag = 'SUMMER_3_PER_HR_PER_WEEK'") }
 	
 	scope :default_flat_2000, -> { where("freq_flag = 'DEFAULT_FLAT_2000'") }
-	scope :member_3_per_week, -> { where("freq_flag = 'MEMBER_3_PER_WEK'") }
-	scope :member_4_per_week, -> { where("freq_flag = 'MEMBER_4_PER_WEK'") }
-	scope :member_5_per_week, -> { where("freq_flag = 'MEMBER_5_PER_WEK'") }
+	scope :member_3_per_week, -> { where("freq_flag = 'MEMBER_3_PER_WEEK'") }
+	scope :member_4_per_week, -> { where("freq_flag = 'MEMBER_4_PER_WEEK'") }
+	scope :member_5_per_week, -> { where("freq_flag = 'MEMBER_5_PER_WEEK'") }
 
 	scope :member_summer_1_per_week, -> { where("freq_flag = 'MEMBER_SUMMER_1_PER_WEEK'") }
 	scope :member_summer_2_per_week, -> { where("freq_flag = 'MEMBER_SUMMER_2_PER_WEEK'") }

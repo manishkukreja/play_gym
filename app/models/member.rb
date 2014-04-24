@@ -22,4 +22,36 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :email
   has_many :member_charges, dependent: :destroy
   has_many :charges, through: :member_charges  
+
+  def total_charge
+  	_total_charges = {}
+  	self.charges.each do |charge|
+  		if charge.freq_flag == 'DEFAULT_FLAT_2000'
+  			_total_charges[:default_flat_2000] = 2000
+  		elsif charge.freq_flag == 'MEMBER_3_PER_WEEK'
+  			_total_charges[:member_3_per_week] = charge.charge + _total_charges[:member_3_per_week] rescue charge.charge
+  		elsif charge.freq_flag == 'MEMBER_4_PER_WEEK'
+  			_total_charges[:member_4_per_week] = charge.charge + _total_charges[:member_4_per_week] rescue charge.charge
+  		elsif charge.freq_flag == 'MEMBER_5_PER_WEEK'
+  			_total_charges[:member_5_per_week] = charge.charge + _total_charges[:member_5_per_week] rescue charge.charge
+  		elsif charge.freq_flag == 'MEMBER_SUMMER_1_PER_WEEK'
+  			_total_charges[:member_summer_1_per_week] = charge.charge + _total_charges[:member_summer_1_per_week] rescue charge.charge
+  		elsif charge.freq_flag == 'MEMBER_SUMMER_2_PER_WEEK'
+  			_total_charges[:member_summer_2_per_week] = charge.charge + _total_charges[:member_summer_2_per_week] rescue charge.charge
+  		elsif charge.freq_flag == 'MEMBER_SUMMER_3_PER_WEEK'
+  			_total_charges[:member_summer_3_per_week] = charge.charge + _total_charges[:member_summer_3_per_week] rescue charge.charge
+  		end
+  	end
+    sum = 0
+  	_total_charges.map {|key, val| sum = sum + _total_charges[key]}
+    case self.membership.membership_type
+    when "Quarterly"
+      sum = sum - (sum / 10)
+    when "Half Yearly"
+      sum = sum - (sum * 20 / 100)
+    when "Yearly"
+      sum = sum - (sum * 30 / 100)
+    end
+    sum
+  end
 end

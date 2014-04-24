@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <b>Membership type:</b>
+  <b>Membership Type:</b>
   <%= @member.membership.membership_type rescue '' %>
 </p>
 
@@ -55,6 +55,7 @@
     </tbody>
   </table>
 </p>
+<p>Total Charge: <strong><%= @member.total_charge rescue '' %></strong></p>
 
 <%= link_to 'Back', admin_members_path %>
 </article>

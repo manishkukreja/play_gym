@@ -172,7 +172,7 @@
 
     calculateTotal = function(){
       var total = 0, selected_radio = 1;
-      $(".membership_type").each(function(){
+      $(".membership_id").each(function(){
         if($(this).is(":checked"))
           selected_radio = $(this).val();
       });
