@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: children
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  member_id  :integer
+#  age        :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  member_id: 
+  age: 1
+
+two:
+  name: MyString
+  member_id: 
+  age: 1
