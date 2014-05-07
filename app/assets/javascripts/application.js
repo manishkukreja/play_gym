@@ -19,3 +19,4 @@
 //= require gmaps_google.js
 //= require MetroJs.js
 //= require custom.js
+//= require children.js.coffee

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423151617) do
+ActiveRecord::Schema.define(version: 20140507075946) do
 
   create_table "activities", force: true do |t|
     t.string   "activity_name"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 20140423151617) do
   end
 
   add_index "charges", ["activity_id"], name: "index_charges_on_activity_id", using: :btree
+
+  create_table "children", force: true do |t|
+    t.string   "name"
+    t.integer  "member_id"
+    t.integer  "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "children", ["member_id"], name: "index_children_on_member_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"

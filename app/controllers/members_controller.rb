@@ -60,6 +60,7 @@ class MembersController < ApplicationController
       @flash = { status: :none }
     else
       @member = Member.new(as_params(params))
+      @member.childrens_attributes = params[:member][:childrens_attributes]
       @member.status = true
       _charge_ids = []
       if [2,3,4,5].include?(params[:member][:membership_type].to_i)
@@ -134,7 +135,7 @@ class MembersController < ApplicationController
     
   private
   def as_params params
-    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date, :dob, :phone1, :phone2)
+    params.require(:member).permit(:first_name, :last_name, :email, :membership_type, :start_date, :end_date, :dob, :phone1, :phone2, :childrens_attributes)
   end
 
 end

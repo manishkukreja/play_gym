@@ -22,7 +22,9 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :email
   has_many :member_charges, dependent: :destroy
   has_many :charges, through: :member_charges  
-
+  has_many :childrens
+  accepts_nested_attributes_for :childrens, allow_destroy: true
+  
   def total_charge
   	_total_charges = {}
   	self.charges.each do |charge|
