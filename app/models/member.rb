@@ -15,13 +15,15 @@
 #  dob           :date
 #  phone1        :string(255)
 #  phone2        :string(255)
+#  start_time    :time
+#  total_hours   :integer          default(1)
 #
 
 class Member < ActiveRecord::Base
   belongs_to :membership
   validates_uniqueness_of :email
   has_many :member_charges, dependent: :destroy
-  has_many :charges, through: :member_charges  
+  has_many :charges, through: :member_charges
   has_many :childrens
   accepts_nested_attributes_for :childrens, allow_destroy: true
   

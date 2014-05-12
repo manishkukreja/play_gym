@@ -47,6 +47,20 @@
       <%= f.radio_button('membership_id', membership.id, class: "membership_id", required: true) %><%= membership.membership_type %>
     <%end%>
   </div>
+  <div class="form-group" id="pay_as_you_go_hours" style="display:none;">
+    <%= f.label "Select Hours" %>
+    <div class="col-xs-12">
+        <div class="col-xs-6 pull-left">
+            <label><%= f.radio_button('total_hours', 1, selected: false, class: 'pay_as_you_go_hours', required: true) %> 1 Hr</label>
+            <label><%= f.radio_button('total_hours', 2, selected: false, class: 'pay_as_you_go_hours', required: true) %> 2 Hr</label>
+            <label><%= f.radio_button('total_hours', 3, selected: false, class: 'pay_as_you_go_hours', required: true) %> 3 Hr</label>
+        </div>
+        <div class="col-xs-6 pull-right">
+            Start Time <%= f.time_field :start_time %>
+            End Time <input type="time" name="end_time" disabled="true">
+        </div>
+    </div>
+  </div>
   <div class="form-group">
     <%= f.label "Start Date", for: "exampleInputEmail4" %>
     <%= f.date_field :start_date, class: "form-control", id: "exampleInputEmail4", placeholder: "Enter Start Date", required: true, title: "Select membership type first", disabled: true %>
