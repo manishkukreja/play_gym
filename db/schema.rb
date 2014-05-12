@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507075946) do
+ActiveRecord::Schema.define(version: 20140512141840) do
 
   create_table "activities", force: true do |t|
     t.string   "activity_name"
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(version: 20140507075946) do
     t.date     "dob"
     t.string   "phone1"
     t.string   "phone2"
+    t.time     "start_time"
+    t.integer  "total_hours",   default: 1
   end
 
   create_table "memberships", force: true do |t|

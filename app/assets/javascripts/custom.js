@@ -7,9 +7,11 @@
         $("#exampleInputEmail5").removeAttr("title");
         $("#charges_table_1").show();
         $("#charges_table_2").hide();
+        $("#pay_as_you_go_hours").show();
       } else {
         $("#charges_table_1").hide();
         $("#charges_table_2").show();
+        $("#pay_as_you_go_hours").hide();
         $("#exampleInputEmail5").attr({"disabled":true});
         $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_id]']:checked").val()));
         if($(this).val()=="3"){
