@@ -3,7 +3,7 @@
       $("#exampleInputEmail4").removeAttr("disabled");
       $("#exampleInputEmail4").removeAttr("title");
       if($(this).val()=="1"){
-        $("#exampleInputEmail5").removeAttr("disabled");
+        // $("#exampleInputEmail5").removeAttr("disabled");
         $("#exampleInputEmail5").removeAttr("title");
         $("#charges_table_1").show();
         $("#charges_table_2").hide();
@@ -37,7 +37,19 @@
     $("#exampleInputEmail4").change(function(){     
       $("#exampleInputEmail5").val(countDate("-", $("#exampleInputEmail4").val(), $("input:radio[name='member[membership_id]']:checked").val()));
     });
+
+    $("#member_start_time,.pay_as_you_go_hours").change(function(){
+      ed = Date.parse($("#member_start_time").val());
+      ed.addHours($("input:radio[name='member[total_hours]']:checked").val());
+      $("input[type=time][name=end_time]").val(formatDigit(ed.getHours()) + ":" + formatDigit(ed.getMinutes()));
+    });
     
+    formatDigit = function(digit){
+      if(digit >= 0 && digit <= 9)
+        return "0" + digit;
+      else
+        return digit;
+    }
     $(".live-tile").liveTile();
 
     $(".onlyNumber").keydown(function (e) {
