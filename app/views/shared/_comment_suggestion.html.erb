@@ -7,27 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Comments and Suggestions are always welcome!!</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag({controller: comments_path, action: :post_comment}, method: :post, class: "form-vertical", role: "form", remote: true, id: "comment_form") do %>
-          <div class="form-group">
-            <%= label_tag "Email *" %>
-            <%= email_field_tag :email, "", class: "form-control", placeholder: "Email", required: true %>
-          </div>
-          <div class="form-group">
-            <%= label_tag "Phone" %>
-            <%= text_field_tag :phone, "", class: "form-control", placeholder: "Phone" %>
-          </div>
-          <div class="form-group">
-            <%= label_tag "Event/Activity" %>
-            <%= select_tag :activity, options_from_collection_for_select(Activity.all, :id, :activity_name), prompt: "Select Activity", class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= label_tag "Comment *" %>
-            <%= text_area_tag :comment, "", class: "form-control", placeholder: "Type your comment here..", required: true %>
-          </div>
-          <div class="form-group">
-            <%= submit_tag "Submit", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+        <%# the code has been removed for comments %>
       </div>
     </div>
   </div>
